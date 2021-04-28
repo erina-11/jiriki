@@ -44,27 +44,7 @@ $pdo = connect_to_db();
 // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
 $sql = 'INSERT INTO plan_table(id, name, img, date_start, date_end, `range`, upper_limit, organizer_message, created_at)
 VALUES (NULL, :plan_name, :plan_img, :plan_start_date , :plan_end_date, :plan_range, :plan_limit, :plan_message, sysdate())';
-// $sql = "INSERT INTO `plan_table` (
-//   `id`,
-//   `user_id`,
-//   `name`,
-//   `img`,
-//   `date_start`,
-//   `date_end`,
-//   `range`,
-//   `upper_limit`,
-//   `organizer_message`,
-//   `hashtag`,
-//   `canceled_at`,
-//   `created_at`,
-//   `updated_at`,
-//   `deleted_at`
-// )VALUES(
-//     `NULL`,
-//     ``
-// )";
-// var_dump($sql);
-// exit();
+
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':plan_name', $plan_name, PDO::PARAM_STR);

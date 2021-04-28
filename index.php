@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include('functions.php');
 check_session_id();
@@ -52,8 +53,6 @@ if ($status == false) {
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +89,7 @@ if ($status == false) {
     </div>
     <fieldset>
         <legend>イベント一覧（一覧画面）</legend>
-        <a href="plan.php">入力画面</a>
+        <a href="plan.php">イベントを企画する</a>
         <a href="logout.php">ログアウト</a>
         <table>
             <thead>
@@ -98,6 +97,9 @@ if ($status == false) {
                     <th>イベント名</th>
                     <th>開催日時</th>
                     <th>終了日時</th>
+                    <th>範囲</th>
+                    <th>参加人数の上限</th>
+                    <th>主催者から一言</th>
 
                     <th></th>
                 </tr>

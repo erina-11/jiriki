@@ -50,7 +50,13 @@
             </div>
             <div>
                 <button>募集する</button>
+
+
             </div>
+            <div>
+                <a href="index.php">ホーム画面へ</a>
+            </div>
+
         </div>
     </form>
 </body>

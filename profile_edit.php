@@ -5,11 +5,7 @@ session_start(); // セッションの開始
 include('functions.php'); // 関数ファイル読み込み
 check_session_id(); // idチェック関数の実行
 
-// var_dump($_SESSION);
-// exit();
 $id = $_SESSION['id'];
-
-// $id = $_GET["id"];
 // var_dump($id);
 // exit();
 
@@ -20,10 +16,10 @@ $sql = 'SELECT * FROM users_table WHERE id=:id';
 // var_dump($sql);
 // exit();
 $stmt = $pdo->prepare($sql);
-// var_dump($stmt);
-// exit();
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
+// var_dump($stmt);
+// exit();
 
 if ($status == false) {
     // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
