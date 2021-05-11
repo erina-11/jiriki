@@ -12,8 +12,6 @@ $plan_id = $_POST['plan_id']; //企画のid
 // exit();
 // var_dump($memo);
 // exit();
-// var_dump($plan_id);
-// exit();
 $pdo = connect_to_db(); //DB接続
 
 $pu_sql = 'SELECT COUNT(*) FROM plan_mypage_table
@@ -32,13 +30,19 @@ if ($pu_status == false) {
     echo json_encode(["error_msg" => "{$error[2]}"]);
     exit();
 }
+// var_dump($memo);
+// var_dump($id);
+// var_dump($plan_id);
+// exit();
+
 
 if ($pu_stmt->fetchColumn() > 0) { //カウントがあればUPDATE
-    $update_sql = "UPDATE plan_mypage_table SET memo=:memo, updated_at=sysdate() WHERE id=:id";
+    $update_sql = "UPDATE plan_mypage_table SET memo=:memo, updated_at=sysdate() WHERE plan_id=:plan_id";
 
     $update_stmt = $pdo->prepare($update_sql);
     $update_stmt->bindValue(':memo', $memo, PDO::PARAM_STR);
-    $update_stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    // $update_stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $update_stmt->bindValue(':plan_id', $plan_id, PDO::PARAM_INT);
     $update_status = $update_stmt->execute();
     // var_dump($update_status);
     // exit();

@@ -8,10 +8,10 @@ function connect_to_db()
     $user = '431da1f01d40c3767220ea9ff3c3ebc6';
     $pwd = '1111aaaaAAAA';
 
+
     // $dbn = 'mysql:dbname=jiriki;charset=utf8;port=3306;host=localhost';
     // $user = 'root';
     // $pwd = '';
-
     try {
         // ここでDB接続処理を実行する(うまくいった場合)
         return new PDO($dbn, $user, $pwd);

@@ -6,7 +6,7 @@
         include('functions.php'); // 関数ファイル読み込み
         check_session_id(); // idチェック関数の実行
 
-        $participate_plan_id = $_POST['participate_plan_id'];
+        $participate_plan_id = $_POST['participate_plan_id']; //
         $participate_user_id = $_POST['participate_user_id'];
 
         $pdo = connect_to_db();
@@ -50,4 +50,5 @@ VALUES(NULL, :participate_user_id, :participate_plan_id, sysdate())';
             // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
             header("Location:plan_details.php?id=" . $participate_user_id);
             exit();
-        } -->
+        }
+        ?> -->

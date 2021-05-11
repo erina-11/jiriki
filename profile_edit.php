@@ -48,7 +48,7 @@ if ($status == false) {
 </head>
 
 <body>
-    <form action="profile_update.php" method="post">
+    <form action="profile_edit.php" method="post">
         <fieldset>
             <h1>会員情報変更</h1>
             <div>
