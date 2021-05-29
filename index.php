@@ -85,7 +85,10 @@ if ($status == false) {
             <a href="login.php">ログイン</a>
             <a href="login.php">新規会員登録</a>
             <a href="profile_edit.php">会員情報変更</a>
+            <a href="staff_page.html">スタッフ一覧</a>
+            <a href="qanda.html">お問い合わせ</a>
         </div>
+    </div>
     </div>
     <fieldset>
         <legend>イベント一覧（一覧画面）</legend>
