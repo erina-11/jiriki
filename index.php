@@ -64,7 +64,9 @@ if ($status == false) {
 
 <body>
     <header>
-        <?= include('header.html'); ?>
+        <?php
+        include('header.html');
+        ?>
         <h1>サービス名</h1>
     </header>
 
