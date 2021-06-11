@@ -2,7 +2,6 @@
 
 session_start();
 include('functions.php');
-check_session_id();
 
 $user_id = $_SESSION['id'];
 // var_dump($user_id);
@@ -65,7 +64,8 @@ if ($status == false) {
 
 <body>
     <header>
-        <h1>サービス名 </h1>
+        <?= include('header.html'); ?>
+        <h1>サービス名</h1>
     </header>
 
     <div class="header">
@@ -114,26 +114,7 @@ if ($status == false) {
             </tbody>
         </table>
     </fieldset>
-    <!-- <div class="plan">
-        <div class="container">
-            <h2>イベント一覧</h2>
-            <div class="plan_card_wrapper">
-                <div class="plan_card">
-                    <div class="plan_card_inner">
-                        <h3 class="plan_title">タイトル</h3>
-                        <img class="plan_image" src="" alt="">
-                        <div>
-                            <p class="plan_starttime">開始日時</p>
-                            <p class="plan_range">範囲</p>
-                            <p class="plan_number_of_people">参加人数</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <!-- "plan_card"クラスから下を9個作る予定 -->
 
 </body>
 
