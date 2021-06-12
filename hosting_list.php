@@ -10,6 +10,8 @@
 
 <body>
     <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
         <h1>あなたが主催しているイベントの一覧です</h1>
     </header>
     <div class="plan_list">

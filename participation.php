@@ -19,6 +19,8 @@
 
 <body>
     <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
         <h1>あなたが参加する予定のイベント一覧です</h1>
     </header>
     <div class="plan_list">

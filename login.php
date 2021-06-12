@@ -49,6 +49,10 @@
                 <button>新規会員登録</button>
             </div>
         </fieldset>
+
+        <div>
+            <a href="index.php">HOME</a>
+        </div>
     </form>
 
 

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div>★ここは共通ヘッダーです(header.htmlをinclude)★</div>
+    <div>★ここは共通ヘッダーです(header.phpをinclude)★</div>
 </body>
 
 </html>

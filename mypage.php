@@ -50,6 +50,8 @@ if ($status == false) {
 <body>
     <!-- <form action="profile_edit.php" method="get"> -->
     <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
         <h1>マイページ</h1>
     </header>
     <div>

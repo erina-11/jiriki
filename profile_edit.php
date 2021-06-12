@@ -45,9 +45,14 @@ if ($status == false) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会員情報変更</title>
+
 </head>
 
 <body>
+    <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
+    </header>
     <form action="profile_edit.php" method="post">
         <fieldset>
             <h1>会員情報変更</h1>
@@ -74,6 +79,10 @@ if ($status == false) {
             </div>
         </fieldset>
     </form>
+
+    <div>
+        <a href="index.php">HOME</a>
+    </div>
 </body>
 
 </html>

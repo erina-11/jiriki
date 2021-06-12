@@ -1,0 +1,1 @@
+document.write('<div>★ここは共通ヘッダーです(header.jsをinclude)★</div>');

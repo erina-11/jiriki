@@ -102,6 +102,8 @@ if ($pu_status == false) {
 
 <body>
     <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
         <h1>イベント企画詳細</h1>
     </header>
 

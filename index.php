@@ -64,10 +64,8 @@ if ($status == false) {
 
 <body>
     <header>
-        <?php
-        include('header.html');
-        ?>
-        <h1>サービス名</h1>
+        <!-- <?php include('header.php'); ?> -->
+        <script src="header.js"></script>
     </header>
 
     <div class="header">

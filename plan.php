@@ -10,6 +10,8 @@
 
 <body>
     <header>
+        <!-- <?php include('header.html'); ?> -->
+        <script src="header.js"></script>
         <h1>イベントを企画することができます</h1>
     </header>
 
