@@ -31,31 +31,6 @@
     <form action="register_act.php" method="POST">
 
         <fieldset>
-            <legend>初めての方はこちら</legend>
-
-            <div>
-                <label for="nickname">ニックネーム: </label>
-                <input type="text" name="nickname" id="nickname">
-            </div>
-            <div>
-                <label for="email">メールアドレス: </label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div>
-                <label for="password">パスワード: </label>
-                <input type="password" name="password" id="password">
-            </div>
-            <div>
-                <button>新規会員登録</button>
-            </div>
-        </fieldset>
-
-        <div>
-            <a href="index.php">HOME</a>
-        </div>
-    </form>
-
-
 
 </body>
 
