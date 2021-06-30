@@ -83,7 +83,7 @@ if ($status == false) {
         </div>
         <div class="header_right">
             <a href="login.php">ログイン</a>
-            <a href="register.html">新規会員登録</a>
+            <a href="register.php">新規会員登録</a>
             <a href="profile_edit.php">会員情報変更</a>
             <a href="staff_page.html">スタッフ一覧</a>
             <a href="qanda.html">お問い合わせ</a>
