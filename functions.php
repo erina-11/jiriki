@@ -4,14 +4,14 @@ function connect_to_db()
 {
     // DB接続の設定
 
-    // $dbn = 'mysql:dbname=431da1f01d40c3767220ea9ff3c3ebc6;charset=utf8;port=3306;host=mysql-2.mc.lolipop.lan';
-    // $user = '431da1f01d40c3767220ea9ff3c3ebc6';
-    // $pwd = '1111aaaaAAAA';
+    $dbn = 'mysql:dbname=431da1f01d40c3767220ea9ff3c3ebc6;charset=utf8;port=3306;host=mysql-2.mc.lolipop.lan';
+    $user = '431da1f01d40c3767220ea9ff3c3ebc6';
+    $pwd = '1111aaaaAAAA';
 
 
-    $dbn = 'mysql:dbname=jiriki;charset=utf8;port=3306;host=localhost';
-    $user = 'root';
-    $pwd = '';
+    // $dbn = 'mysql:dbname=jiriki;charset=utf8;port=3306;host=localhost';
+    // $user = 'root';
+    // $pwd = '';
     try {
         // ここでDB接続処理を実行する(うまくいった場合)
         return new PDO($dbn, $user, $pwd);
