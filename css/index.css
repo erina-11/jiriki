@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f6f5f4;
+  }
+  header {
+    width: 100%;
+    height: 75px;
+    background: #ff0000;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    display: flex; /* flexboxを作る */
+    align-items: center; /* 上下中央に揃える */
+    justify-content: space-between; /* 両端に配置 */
+    position: fixed;
+    top: 0;
+  }
+
+  h1 a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  li a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+
+  ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  header img {
+    text-align: center;
+    margin-top: 2px;
+  }
