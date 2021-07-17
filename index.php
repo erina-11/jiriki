@@ -60,6 +60,14 @@ if ($status == false) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>トップページ</title>
+
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -80,16 +88,82 @@ if ($status == false) {
                 <input type="submit" name="submit" value="検索">
             </form>
             <!-- <button>ホーム</button> -->
+
+
+    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
         </div>
-        <div class="header_right">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      <div class="row g-0">
+          <div class="card-body">
+        <p class="card-text text-white">
+          主催者からのひとこと
+        </p>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-0">
+          <div class="card-body">
+        <p class="card-text text-white">
+          主催者からのひとこと
+        </p>
+          </div>
+      </div>
+    </div>
+
+    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      <div class="row g-0">
+          <div class="card-body">
+        <p class="card-text text-white">
+          主催者からのひとこと
+        </p>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="header_right">
             <a href="login.php">ログイン</a>
             <a href="register.html">新規会員登録</a>
             <a href="profile_edit.php">会員情報変更</a>
             <a href="staff_page.html">スタッフ一覧</a>
             <a href="qanda.html">お問い合わせ</a>
-        </div>
+
+            </div>
     </div>
     </div>
+
     <fieldset>
         <legend>イベント一覧（一覧画面）</legend>
         <a href="plan.php">イベントを企画する</a>
