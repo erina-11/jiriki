@@ -25,23 +25,16 @@
 
 　　ログインするには、メールアドレスとパスワードを入力してください。
     
+<form action="login_act.php" method="post">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="メールアドレス" aria-label="" aria-describedby="basic-addon1">
+        <input type="text" name="email" class="form-control" placeholder="メールアドレス" aria-label="" aria-describedby="basic-addon1">
     </div>
 
     <div>
-        <input type="text" class="form-control" placeholder="パスワード" aria-label="" aria-describedby="basic-addon1">
+        <input type="text" name="password" class="form-control" placeholder="パスワード" aria-label="" aria-describedby="basic-addon1">
     </div>
-
-    <div class="input-group">
-        <input class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
-    </div>
-
     <button type="submit" class="btn btn-primary mb-2">ログインする</button>
-
-    <div>
-
-    </div>
+</form>
 
     <footer>
         <p align=center>フッター</p>
