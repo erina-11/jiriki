@@ -16,6 +16,7 @@ body {
     align-items: center; /* 上下中央に揃える */
     justify-content: space-between; /* 両端に配置 */
     position: fixed;
+    z-index: 10;
     top: 0;
   }
 
