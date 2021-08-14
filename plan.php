@@ -46,7 +46,7 @@
                
                 <div>
                     <label for="plan_limit">人数制限: </label>
-                    <input type="number" name="plan_limit" id="plan_limit">
+                    <input type="number" min="1" name="plan_limit" id="plan_limit">
                 </div>
                 
                 <div>
