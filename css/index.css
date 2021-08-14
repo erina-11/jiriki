@@ -60,3 +60,7 @@ body {
   header li:first-child {
     margin-right: auto;
   }
+
+  main {
+    margin-top: 75px ;
+  }

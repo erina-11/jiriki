@@ -27,4 +27,3 @@
                 <li><a href="index.html#menu">MENU</a></li>
             </ul>
         </nav>
-    </header>
