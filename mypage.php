@@ -41,6 +41,7 @@ if ($status == false) {
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,15 +49,39 @@ if ($status == false) {
 </head>
 
 <body>
-    <!-- <form action="profile_edit.php" method="get"> -->
+   
+<!-- <form action="profile_edit.php" method="get"> -->
+   
     <header>
-        <!-- <?php include('header.html'); ?> -->
+    <!-- <?php include('header.html'); ?> -->
         <script src="header.js"></script>
-        <h1>マイページ</h1>
     </header>
-    <div>
-        <h2>ここは<?= $record['nickname'] ?>さんのマイページです</h2>
+    
+
+ <h2><?= $record['nickname'] ?></h2>
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+            <img width="250" height="100" src="img/staff/テストくん.jpg" alt="テストくんが出るはずです" >
+            </div>
+            
+            <div class="col-2">
+            <p>開催したイベント数　50</p>
+            </div>
+            
+            <div class="col-2">
+            <p>フォロワー500</p>
+            </div>
+            <div class="col-2">
+            <p>フォロー中0</p>
+            </div>
+        </div>
     </div>
+
+    <p>吾輩はSAKANAである。ちゃんとした名前はまだ無い。どこで生れたかとんと見当（けんとう）がつかぬ。
+        何でも薄暗い漁船の上でピチピチ跳ねていた事だけは記憶している。
+        吾輩はここで始めて人間というものを見た。</p>
 
     <div>
         <img class="icon" src="" alt="">
@@ -65,22 +90,29 @@ if ($status == false) {
     <div>
         <a href="profile_edit.php">プロフィール編集</a>
     </div>
+    
     <div>
         <a href="follow_list.php">フォロー中の主催者一覧</a>
     </div>
+    
     <div>
         <a href="plan_list.php">あなたが主催しているイベント一覧</a>
     </div>
+    
     <div>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
+    
     <br>
+    
     <div>
         <a href="index.php">ホーム画面へ</a>
     </div>
+    
     <div>
         <a href="logout.php">ログアウト</a>
     </div>
+    
     <!-- </ form> -->
 
 </body>
