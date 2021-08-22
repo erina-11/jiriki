@@ -1,10 +1,12 @@
-body {
+  body {
     margin: 0;
     padding: 0;
     color: #1a1a1a;
     font-family: 'Noto Sans JP', sans-serif;
     background: #f6f5f4;
   }
+
+/* header */
   header {
     width: 100%;
     height: 75px;
@@ -16,9 +18,28 @@ body {
     align-items: center; /* 上下中央に揃える */
     justify-content: space-between; /* 両端に配置 */
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
   }
+  .header_img {
+    /* text-align: center; */
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 2px;
+  }
+  .header_menu {
+    margin-right:20px;
+    margin-bottom:0;
+    margin-top: 2px;
+  }
+  header li:first-child {
+    margin-right: auto;
+  }
+  .header_space {
+    height: 75px ;
+  }
+
 
   h1 a {
     color: #ffffff;
@@ -41,25 +62,18 @@ body {
     color: #ffffff;
   }
 
-  .header_img {
-    /* text-align: center; */
-    margin-bottom:0;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 2px;
+  
+/* aboutページ */
+  .about_content h4 { 
+    text-align: center ;
+    line-height: 150% ;
+  }
+  .about_content h2 {
+    text-align: center ;
+    font-size: 225% ;
+    text-decoration: underline;
   }
 
-  /*
-  .header_menu {
-    margin-right:20px;
-    margin-bottom:0;
-    margin-top: 2px;
-  }
-  */
-
-  header li:first-child {
-    margin-right: auto;
-  }
 
   main {
     margin-top: 75px ;
