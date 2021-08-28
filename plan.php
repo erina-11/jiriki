@@ -31,12 +31,12 @@
                 
                 <div>
                     <label for="plan_start_date">イベント開始日時: </label>
-                    <input type="date" name="birthday">
+                    <input type="date" name="plan_start_date">
                 </div>
                
                 <div>
                     <label for="plan_end_date">イベント終了日時: </label>
-                    <input type="date" name="birthday">
+                    <input type="date" name="plan_end_date">
                 </div>
                 
                 <div>

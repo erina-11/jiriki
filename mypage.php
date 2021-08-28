@@ -67,14 +67,14 @@ if ($status == false) {
             </div>
             
             <div class="col-2">
-            <p>開催したイベント数　50</p>
+            <p>開催したイベント数　500000</p>
             </div>
             
             <div class="col-2">
-            <p>フォロワー500</p>
+            <p>フォロワー0</p>
             </div>
             <div class="col-2">
-            <p>フォロー中0</p>
+            <p>フォロー中500</p>
             </div>
         </div>
     </div>
