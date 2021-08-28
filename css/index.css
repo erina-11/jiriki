@@ -40,7 +40,34 @@
     height: 75px ;
   }
 
+/*footer*/
+  footer {
+    width: 100%;
+    height: 80px;
+    bottom: auto;
+    background: #4d4d4d;
+    box-sizing: border-box;
+    display: flex; /* flexboxを作る */
+    align-items: center; /* 上下中央に揃える */
+    justify-content: space-between; /* 両端に配置 */
+    z-index: 100;
+    top: 0;
+    padding:30px 25% ;
+  }
 
+  footer a {
+    color: #ffffff ;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover{
+    color: #00ffff ;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+/*その他*/
   h1 a {
     color: #ffffff;
     text-decoration: none;

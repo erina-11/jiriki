@@ -168,6 +168,8 @@ if ($status == false) {
         </table>
     </fieldset>
 
+    <?php include('footer.php'); ?>
+
 
 </body>
 
