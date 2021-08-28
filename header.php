@@ -19,11 +19,11 @@
 <body>
     <header>
         <div class = "img">
-            <img  src="img/logo.png" width="252" height="54" alt="">
+            <a href="index.php"> <img src="img/logo.png" width="252" height="54" alt=""> </a>
         </div>
         <nav id="top-nav">
             <ul>
-                <li><a href="about.php">ABOUT</a></li>
-                <li><a href="index.html#menu">MENU</a></li>
+                <li> <a href="about.php">ABOUT</a> </li>
+                <li> <a href="index.html#menu">MENU</a> </li>
             </ul>
         </nav>
