@@ -30,9 +30,36 @@ if ($status == false) {
 
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
+   
     foreach ($result as $record) {
+    
+      $output .= "
+      <a href='plan_details.php?id={$record["id"]}'>
+    <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
+      <div class='row g-0'>
+        <div class='col-md-4'>
+          <img src='img/LOGO4.png' alt='ここにはロゴマ～クが出ます' width='100' height='150'>
+        </div>
+        <div class='col-md-8'>
+          <div class='card-body'>
+            <h5 class='card-title'>Card title</h5>
+            <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class='row g-0'>
+          <div class='card-body'>
+        <p class='card-text text-white'>
+          主催者からのひとこと
+        </p>
+          </div>
+      </div>
+    </div>
+</a>
+      ";
+/*
         $output .= "<tr>";
-        $output .= "<td><a href='plan_details.php?id={$record["id"]}'>{$record["name"]}</a></td>";
+        $output .= "<td><a href=''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''>{$record["name"]}</a></td>";
         $output .= "<td>" . date("Y/n/j", strtotime($record["date_start"])) . "</td>";
         $output .= "<td>" . date("Y/n/j", strtotime($record["date_end"])) . "</td>";
         $output .= "<td>{$record["range"]}</td>";
@@ -42,6 +69,7 @@ if ($status == false) {
         // $output .= "<td><a href='todo_edit.php?id={$record["id"]}'>edit</a></td>";
         // $output .= "<td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>";
         $output .= "</tr>";
+*/
     }
     // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
     // 今回は以降foreachしないので影響なし
@@ -68,69 +96,6 @@ if ($status == false) {
             </form>
             <!-- <button>ホーム</button> -->
 
-
-    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      <div class="row g-0">
-          <div class="card-body">
-        <p class="card-text text-white">
-          主催者からのひとこと
-        </p>
-          </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row g-0">
-          <div class="card-body">
-        <p class="card-text text-white">
-          主催者からのひとこと
-        </p>
-          </div>
-      </div>
-    </div>
-
-    <div class="card mb-3 bg-info text-white" style="max-width: 540px;"> 
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="img/LOGO4.png" alt="ここにはロゴマ～クが出ます" width="100" height="150">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      <div class="row g-0">
-          <div class="card-body">
-        <p class="card-text text-white">
-          主催者からのひとこと
-        </p>
-          </div>
-      </div>
-      </div>
-    </div>
 
     <div class="header_right">
             <a href="login.php">ログイン</a>
