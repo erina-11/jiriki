@@ -33,8 +33,8 @@ if ($status == false) {
     foreach ($result as $record) {
         $output .= "<tr>";
         $output .= "<td><a href='plan_details.php?id={$record["id"]}'>{$record["name"]}</a></td>";
-        $output .= "<td>" . date("Y/m/d", strtotime($record["date_start"])) . "</td>";
-        $output .= "<td>" . date("Y/m/d", strtotime($record["date_end"])) . "</td>";
+        $output .= "<td>" . date("Y/n/j", strtotime($record["date_start"])) . "</td>";
+        $output .= "<td>" . date("Y/n/j", strtotime($record["date_end"])) . "</td>";
         $output .= "<td>{$record["range"]}</td>";
         $output .= "<td>{$record["upper_limit"]}</td>";
         $output .= "<td>{$record["organizer_message"]}</td>";
