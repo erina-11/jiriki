@@ -112,25 +112,7 @@ if ($status == false) {
         <legend>イベント一覧（一覧画面）</legend>
         <a href="plan.php">イベントを企画する</a>
         <a href="logout.php">ログアウト</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>イベント名</th>
-                    <th>開催日時</th>
-                    <th>終了日時</th>
-                    <th>範囲</th>
-                    <th>参加人数の上限</th>
-                    <th>主催者から一言</th>
 
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
-                <?= $output ?>
-
-            </tbody>
-        </table>
     </fieldset>
 
     <?php include('footer.php'); ?>
