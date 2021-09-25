@@ -38,12 +38,12 @@ if ($status == false) {
     <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
       <div class='row g-0'>
         <div class='col-md-4'>
-          <img src='img/LOGO4.png' alt='ここにはロゴマ～クが出ます' width='100' height='150'>
+          <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
         </div>
         <div class='col-md-8'>
           <div class='card-body'>
-            <h5 class='card-title'>Card title</h5>
-            <p class='card-text'>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class='card-title'>{$record["name"]}</h5>
+            <p class='card-text'>{$record["organizer_message"]}'</p>
           </div>
         </div>
       </div>
