@@ -20,19 +20,7 @@
         </div>
       </div>
 
-      <div class="card text-white bg-danger mb-3 rounded-pill" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="img/staff/Iizawa_icon.png" width="180" height="180" alt="画像">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">イイザワ</h5>
-              <p class="card-text">上野老師の元生徒です。<br>プログラミングスクールを卒業後、<br>お仕事しながら学習を続けています。</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="card text-white bg-danger mb-3 rounded-pill" style="max-width: 540px;">
         <div class="row g-0">
@@ -89,6 +77,21 @@
           </div>
         </div>
       </div>
+
+      <div class="card text-white bg-danger mb-3 rounded-pill" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/staff/Iizawa_icon.png" width="180" height="180" alt="画像">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">イイザワ</h5>
+              <p class="card-text">上野老師の元生徒です。<br>プログラミングスクールを卒業後、<br>お仕事しながら学習を続けています。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <?php include('footer.php'); ?>
