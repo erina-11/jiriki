@@ -8,7 +8,10 @@
     <title>検索一覧</title>
 </head>
 
-<body>
+<?php include('header.php'); ?>
+        </header>
+<div class="header_space"></div> 
+
     <div>
         <select class="select">
             <option value="cat1">過去</option>
@@ -38,6 +41,8 @@
     <div class="list-btn">
         <button>もっと見る</button>
     </div>
+    <?php include('footer.php'); ?>
+    
 </body>
 
 </html>

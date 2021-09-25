@@ -17,30 +17,24 @@
 
 </head>
 
-<body>
 
-    <header>
-        <h1 align=center>ログイン</h1>
-    </header>
-
+<?php include('header.php'); ?>
+        </header>
+<div class="header_space"></div> 
+    <h1 align=center>ログイン</h1>
 　　ログインするには、メールアドレスとパスワードを入力してください。
-    
-<form action="login_act.php" method="post">
-    <div class="input-group">
-        <input type="text" name="email" class="form-control" placeholder="メールアドレス" aria-label="" aria-describedby="basic-addon1">
-    </div>
 
-    <div>
-        <input type="text" name="password" class="form-control" placeholder="パスワード" aria-label="" aria-describedby="basic-addon1">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">ログインする</button>
-</form>
+<main>
+    <form action="login_act.php" method="post">
+        <div class="input-group">
+            <input type="text" name="email" class="form-control" placeholder="メールアドレス" aria-label="" aria-describedby="basic-addon1">
+        </div>
 
-    <footer>
-        <p align=center>フッター</p>
+        <div>
+            <input type="text" name="password" class="form-control" placeholder="パスワード" aria-label="" aria-describedby="basic-addon1">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">ログインする</button>
+    </form>
+</main>
 
-    </footer>
-
-</body>
-
-</html>
+<?php include('footer.php'); ?>

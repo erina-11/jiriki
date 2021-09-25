@@ -16,7 +16,9 @@
 
 </head>
 
-<body>
+<?php include('header.php'); ?>
+        </header>
+<div class="header_space"></div> 
     
 <table class="table">
   <thead>
@@ -45,6 +47,4 @@
   </tbody>
 </table>
 
-</body>
-
-</html>
+<?php include('footer.php'); ?>

@@ -8,10 +8,11 @@
     <title>新規会員登録完了</title>
 </head>
 
-<body>
+<?php include('header.php'); ?>
+        </header>
+<div class="header_space"></div> 
+
     <p>新規会員登録が完了しました</p>
     <a href="index.php">ホームへ戻る</a>
 
-</body>
-
-</html>
+    <?php include('footer.php'); ?>
