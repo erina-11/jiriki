@@ -115,6 +115,9 @@ if ($status == false) {
 
     </fieldset>
 
+    <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+    <?= $output ?>
+
     <?php include('footer.php'); ?>
 
 
