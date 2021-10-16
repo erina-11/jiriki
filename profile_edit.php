@@ -54,35 +54,41 @@ if ($status == false) {
         <script src="header.js"></script>
     </header>
     <form action="profile_edit.php" method="post">
-        <fieldset>
-            <h1>会員情報変更</h1>
-            <div>
-                <div>
-                    <label for="icon">アイコン: </label>
-                    <input type="file" name="icon" value="<?= $record["icon"] ?>">
-                </div>
-                <div>
-                    <label for="nickname">ニックネーム: </label>
-                    <input type="text" name="nickname" value="<?= $record["nickname"] ?>">
-                </div>
-                <div>
-                    <label for="email">メールアドレス: </label>
-                    <input type="email" name="email" value="<?= $record["mail_address"] ?>">
-                </div>
-                <div>
-                    <label for="password">パスワード: </label>
-                    <input type="password" name="password" value="<?= $record["password"] ?>">
-                </div>
-            </div>
-            <div>
-                <button>変更する</button>
-            </div>
-        </fieldset>
-    </form>
+   
+ <table class="table">
+  
+  <tbody>
+    <tr>
+      <td>アイコン</td>
+      <td><input type="file" class="form-control-file" id="exampleFormControlFile1"></td>
+    </tr>
+
+    <tr>
+      <td>ニックネーム</td>
+      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+    </tr>  
+      
+    <tr>
+      <td>メールアドレス</td>
+      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+    </tr> 
+
+    <tr>
+      <td>パスワード</td>
+      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+    </tr> 
+
+  </tbody>
+
+</table>
+
+
+  </form>
 
     <div>
         <a href="index.php">HOME</a>
     </div>
+
 </body>
 
 </html>
