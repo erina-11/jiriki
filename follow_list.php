@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include('header.php'); ?>
+    </header>
+<div class="header_space"></div> 
 
 <head>
     <meta charset="UTF-8">
@@ -9,9 +10,7 @@
 </head>
 
 <body>
-    <header>
         <h1>フォロー中</h1>
-    </header>
 
     <div class="follow_list">
         <div class="follow_card">
@@ -30,3 +29,4 @@
 </body>
 
 </html>
+<?php include('footer.php'); ?>

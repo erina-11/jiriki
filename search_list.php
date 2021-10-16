@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include('header.php'); ?>
+    </header>
 
 <head>
     <meta charset="UTF-8">
