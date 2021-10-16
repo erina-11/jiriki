@@ -59,7 +59,7 @@
             </div>
             
             <div>
-                <button>募集する</button>
+　　　　　　 <button>募集する</button>
             </div>
             
             <div>

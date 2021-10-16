@@ -133,8 +133,9 @@ if ($pu_status == false) {
             <!-- <?= $plan_p_record["plan_id"] ?> -->
 
         </div>
+        <button><a href="plan_talk.php">参加する</a></button>
         <form method="post" action="participate_act.php">
-            <button>参加する</button>
+
             <input type="hidden" name="participate_plan_id" value="<?= $p_id ?>">
             <input type="hidden" name="participate_user_id" value="<?= $id ?>">
         </form>
