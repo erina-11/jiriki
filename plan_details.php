@@ -36,7 +36,7 @@ if ($p_status == false) {
     // $p_result = $p_stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
     // $p_output = "";
 }
-// var_dump($p_record);
+//var_dump($p_record);
 // exit();
 
 $sql = 'SELECT * FROM users_table WHERE id=:id'; //ログインユーザーのidを参照
@@ -111,13 +111,21 @@ if ($pu_status == false) {
         <div class="plan_card_inner">
 
             <h3 class="plan_title">タイトル:<?= $p_record["name"] ?></h3>
-            <p class="plan_starttime">開始日時:<?= $p_record["date_start"] ?></p>
-            <p class="plan_endtime">終了日時:<?= $p_record["date_end"] ?></p>
+           
+            <p class="plan_starttime">開始日時:<?php date("Y/M/D", strtotime($p_record["date_start"])); ?></p>
+            
+            <p class="plan_endtime">終了日時:<?php date('Y年m月d日', strtotime($p_record["date_end"])); ?></p>
+            
             <p class="plan_range">範囲:<?= $p_record["range"] ?></p>
+            
             <p>参加人数制限:<?= $p_record["upper_limit"] ?></p>
+            
             <p class="plan_number_of_people">参加人数</p>
+            
             <p>主催者:<?= $_SESSION["nickname"] ?></p>
+            
             <p name="" id="" cols="30" rows="10">主催者から一言</p>
+            
             <p><?= $p_record["organizer_message"] ?></p>
 
             <br>
