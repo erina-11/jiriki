@@ -64,20 +64,6 @@
         </div>
       </div>
 
-      <div class="card text-white bg-danger mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="img/staff/テストくん.jpg" width="120" height="120" alt="画像">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">テストくん</h5>
-              <p class="card-text">テスト用キャラです。解雇の日は近い。<br>そしてうちのマスコットです。かわいいね!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="card text-white bg-danger mb-3 rounded-pill" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
@@ -92,6 +78,48 @@
         </div>
       </div>
 
+      <div class="tab-menu">(押せ)</div>
+      <div class="tab-menu">(押すな)</div>
+
+      <div class="tab">
+        (○皿○)
+      </div>
+
+      <div class="tab inactive">
+        <div class="card text-white bg-danger mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/staff/テストくん.jpg" width="120" height="120" alt="画像">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">テストくん</h5>
+                <p class="card-text">テスト用キャラです。解雇の日は近い。<br>そしてうちのマスコットです。かわいいね!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <?php include('footer.php'); ?>
+
+    <script>
+      let tabMenus = document.querySelectorAll('.tab-menu');
+      let tabMenu1 = tabMenus.item(0);
+      let tabMenu2 = tabMenus.item(1);
+
+      let tabs = document.querySelectorAll('.tab');
+      let tab1 = tabs.item(0);
+      let tab2 = tabs.item(1);
+
+      tabMenu1.addEventListener('click', function() {
+        tab1.className = 'tab';
+        tab2.className = 'tab inactive';
+      });
+      tabMenu2.addEventListener('click', function() {
+        tab1.className = 'tab inactive';
+        tab2.className = 'tab';
+      });
+      </script>
