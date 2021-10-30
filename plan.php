@@ -12,7 +12,7 @@
     <header>
         <!-- <?php include('header.html'); ?> -->
         <script src="header.js"></script>
-       <img src="img/gigitlogo.png" alt="logo.png">
+       <img src="img/logo.png" alt="logo.png">
         <h1>イベントを企画することができます</h1>
     </header>
 
