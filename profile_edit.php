@@ -69,7 +69,7 @@ include('header.php'); ?>
 
 </table>
 
-
+                           <input type="button" value="送信">
   </form>
 
     <div>
