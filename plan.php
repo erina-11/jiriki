@@ -12,6 +12,7 @@
     <header>
         <!-- <?php include('header.html'); ?> -->
         <script src="header.js"></script>
+       <img src="img/logo.png" alt="logo.png">
         <h1>イベントを企画することができます</h1>
     </header>
 
@@ -59,7 +60,7 @@
             </div>
             
             <div>
-                <button>募集する</button>
+　　　　　　 <button>募集する</button>
             </div>
             
             <div>

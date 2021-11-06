@@ -103,3 +103,26 @@
   main {
     margin-top: 75px ;
   }
+  
+
+  body {
+  }
+  
+  .chat{
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .message-icon{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+  }
+  
+  .message-text{
+    display: inline-block;
+    max-width: 70%;
+    border-radius: 1rem;
+  }
+  
