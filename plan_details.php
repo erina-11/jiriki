@@ -112,9 +112,9 @@ if ($pu_status == false) {
 
             <h3 class="plan_title">タイトル:<?= $p_record["name"] ?></h3>
            
-            <p class="plan_starttime">開始日時:<?php date("Y/M/D", strtotime($p_record["date_start"])); ?></p>
+            <p class="plan_starttime">開始日時:<?= date("Y/M/D", strtotime($p_record["date_start"])); ?></p>
             
-            <p class="plan_endtime">終了日時:<?php date('Y年m月d日', strtotime($p_record["date_end"])); ?></p>
+            <p class="plan_endtime">終了日時:<?= date('Y年m月d日', strtotime($p_record["date_end"])); ?></p>
             
             <p class="plan_range">範囲:<?= $p_record["range"] ?></p>
             
