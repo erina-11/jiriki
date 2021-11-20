@@ -1,3 +1,11 @@
+<?php
+if (empty($_SESSION['id'])){
+    $user_id = "" ;
+} else {
+    $user_id = $_SESSION ;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,5 +33,13 @@
             <ul>
                 <li> <a href="about.php">ABOUT</a> </li>
                 <li> <a href="index.html#menu">MENU</a> </li>
+                <li>
+                    <?php if ($user_id) {  ?>
+                    <a href="logout.php">LOGOUT</a>
+                    <?php } else { ?>
+                    <a href="login.php">LOGIN</a>
+                    <a href="register.html">SIGNIN</a>
+                    <?php } ?>
+                </li>
             </ul>
         </nav>
