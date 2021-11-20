@@ -35,6 +35,7 @@ if (empty($_SESSION['id'])){
                 <li> <a href="index.html#menu">MENU</a> </li>
                 <li>
                     <?php if ($user_id) {  ?>
+                    <a href="mypage.php">MYPAGE</a>
                     <a href="logout.php">LOGOUT</a>
                     <?php } else { ?>
                     <a href="login.php">LOGIN</a>

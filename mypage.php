@@ -32,9 +32,9 @@ if ($status == false) {
 // var_dump($record);
 // exit();
 
-
-?>
-
+include('header.php');?>
+        </header>
+<div class="header_space"></div>
 
 
 <!DOCTYPE html>
@@ -52,10 +52,6 @@ if ($status == false) {
    
 <!-- <form action="profile_edit.php" method="get"> -->
    
-    <header>
-    <!-- <?php include('header.html'); ?> -->
-        <script src="header.js"></script>
-    </header>
     
 
  <h2><?= $record['nickname'] ?></h2>

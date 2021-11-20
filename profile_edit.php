@@ -47,7 +47,10 @@ include('header.php'); ?>
   <tbody>
     <tr>
       <td>アイコン</td>
-      <td><input type="file" class="form-control-file" id="exampleFormControlFile1"></td>
+      <td><input type="file" class="form-control-file" id="exampleFormControlFile1" accept='image/*' onchange="previewImage(this);">
+　        プレビュー:<br>
+　        <img id="preview" src="" style="max-width:200px;">
+      </td>
     </tr>
 
     <tr>
@@ -80,3 +83,14 @@ include('header.php'); ?>
 
 </html>
 <?php include('footer.php'); ?>
+
+<script>
+function previewImage(obj)
+{
+	var fileReader = new FileReader();
+	fileReader.onload = (function() {
+		document.getElementById('preview').src = fileReader.result;
+	});
+	fileReader.readAsDataURL(obj.files[0]);
+}
+</script>
