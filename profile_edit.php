@@ -16,7 +16,7 @@ $sql = 'SELECT * FROM users_table WHERE id=:id';
 // var_dump($sql);
 // exit();
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT); // PDO::PARAM_INTでint型を指定
 $status = $stmt->execute();
 // var_dump($stmt);
 // exit();
@@ -29,9 +29,9 @@ if ($status == false) {
 } else {
     // 正常にSQLが実行された場合は指定の11レコードを取得
     // fetch()関数でSQLで取得したレコードを取得できる
-    $record = $stmt->fetch(PDO::FETCH_ASSOC);
+    $record = $stmt->fetch(PDO::FETCH_ASSOC); // データを取得する際のデータの形を指定できる。参考：https://blog.senseshare.jp/fetch-mode.html
 }
-// var_dump($record);
+ var_dump($record);
 // exit();
 
 include('header.php'); ?>
@@ -52,24 +52,24 @@ include('header.php'); ?>
 
     <tr>
       <td>ニックネーム</td>
-      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+      <td><input type="text" value="<?= $record['nickname'] ?>" class="form-control" aria-label="Text input with radio button"></td>
     </tr>  
       
     <tr>
       <td>メールアドレス</td>
-      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+      <td><input type="text" value="<?= $record['mail_address'] ?>" class="form-control" aria-label="Text input with radio button"></td>
     </tr> 
 
     <tr>
       <td>パスワード</td>
-      <td><input type="text" class="form-control" aria-label="Text input with radio button"></td>
+      <td><input type="text" value="<?= $record['password'] ?>" class="form-control" aria-label="Text input with radio button"></td>
     </tr> 
 
   </tbody>
 
 </table>
 
-
+                           <input type="button" value="送信">
   </form>
 
     <div>

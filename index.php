@@ -30,33 +30,37 @@ if ($status == false) {
 
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
-   
+}
+
+$output .="<div class='d-flex flex-wrap'>";
+
     foreach ($result as $record) {
     
       $output .= "
       <a href='plan_details.php?id={$record["id"]}'>
-    <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
-      <div class='row g-0'>
-        <div class='col-md-4'>
-          <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
-        </div>
-        <div class='col-md-8'>
-          <div class='card-body'>
-            <h5 class='card-title'>{$record["name"]}</h5>
-            <p class='card-text'>{$record["organizer_message"]}'</p>
+        <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
+          <div class='row g-0'>
+            <div class='col-md-4'>
+              <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
+            </div>
+            <div class='col-md-8'>
+              <div class='card-body'>
+                <h5 class='card-title'>{$record["name"]}</h5>
+                <p class='card-text'>{$record["organizer_message"]}'</p>
+              </div>
+            </div>
+          </div>
+          <div class='row g-0'>
+              <div class='card-body'>
+            <p class='card-text text-white'>
+              主催者からのひとこと
+            </p>
+              </div>
           </div>
         </div>
-      </div>
-      <div class='row g-0'>
-          <div class='card-body'>
-        <p class='card-text text-white'>
-          主催者からのひとこと
-        </p>
-          </div>
-      </div>
-    </div>
-</a>
-      ";
+     </a>
+    ";
+
 /*
         $output .= "<tr>";
         $output .= "<td><a href=''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''>{$record["name"]}</a></td>";
@@ -70,11 +74,12 @@ if ($status == false) {
         // $output .= "<td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>";
         $output .= "</tr>";
 */
-    }
     // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
     // 今回は以降foreachしないので影響なし
     unset($value);
-}
+
+  }
+  $output .="</div>";
 
 ?>
 
@@ -116,7 +121,7 @@ if ($status == false) {
     </fieldset>
 
     <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
-    <?= $output ?>
+<?= $output ?>
 
     <?php include('footer.php'); ?>
 

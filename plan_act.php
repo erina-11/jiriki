@@ -28,6 +28,7 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
+$plan_user_id = $_SESSION['id'];
 $plan_img = $_POST['plan_img'];
 $plan_name = $_POST['plan_name'];
 $plan_start_date = $_POST['plan_start_date'];
@@ -42,11 +43,12 @@ $pdo = connect_to_db();
 
 // データ登録SQL作成
 // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
-$sql = 'INSERT INTO plan_table(id, name, img, date_start, date_end, `range`, upper_limit, organizer_message, created_at)
-VALUES (NULL, :plan_name, :plan_img, :plan_start_date , :plan_end_date, :plan_range, :plan_limit, :plan_message, sysdate())';
+$sql = 'INSERT INTO plan_table(id, user_id, name, img, date_start, date_end, `range`, upper_limit, organizer_message, created_at)
+VALUES (NULL, :plan_user_id, :plan_name, :plan_img, :plan_start_date , :plan_end_date, :plan_range, :plan_limit, :plan_message, sysdate())';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':plan_user_id', $plan_user_id, PDO::PARAM_INT);
 $stmt->bindValue(':plan_name', $plan_name, PDO::PARAM_STR);
 $stmt->bindValue(':plan_img', $plan_img, PDO::PARAM_STR);
 $stmt->bindValue(':plan_start_date', $plan_start_date, PDO::PARAM_STR);
