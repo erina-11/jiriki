@@ -1,57 +1,87 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <title>Bootstrapで作ったチャットのデザインのサンプルを紹介！</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="index.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
+session_start();
+include('functions.php');
 
-<body>
-  <div class="container">
-    <div class="chat bg-light p-4">
-      <div class="message d-flex flex-row align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 ms-2 mb-0 bg-warning">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row-reverse align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 me-2 mb-0 bg-info">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 ms-2 mb-0 bg-warning">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-      <div class="message d-flex flex-row-reverse align-items-start mb-4">
-        <div class="message-icon rounded-circle bg-secondary text-white fs-3">
-          <i class="fas fa-user"></i>
-        </div><!-- .message-icon -->
-        <p class="message-text p-2 me-2 mb-0 bg-info">
-          サンプルテキスト。サンプルテキスト。サンプルテキスト。
+$user_id = $_SESSION['id'];
+// var_dump($user_id);
+// exit();
+$pdo = connect_to_db();
 
-        </p><!-- .message-text -->
-      </div><!-- .message -->
-    </div><!-- .chat -->
-  </div><!-- .container -->
-  <div class="input-group">
-    <input type="text" name="" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-    <button type="submit" class="btn btn-primary mb-2">送信する</button>
-</div>
-<div>
-</body>
-</html>
+// データ取得SQL作成
+$sql = 'SELECT * FROM plan_chat_table';
+// var_dump($sql);
+// exit();
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$status = $stmt->execute();
+
+// データ登録処理後
+if ($status == false) {
+    // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
+    $error = $stmt->errorInfo();
+    echo json_encode(["error_msg" => "{$error[2]}"]);
+    exit();
+} else {
+    // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
+    // fetchAll()関数でSQLで取得したレコードを配列で取得できる
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
+    $output = "";
+
+    // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
+    // `.=`は後ろに文字列を追加する，の意味
+}
+
+var_dump($result);
+$output .="<div class='d-flex flex-wrap'>";
+
+    foreach ($result as $record) {
+    
+      $output .= "
+      <a href='plan_details.php?id={$record["id"]}'>
+        <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
+          <div class='row g-0'>
+            <div class='col-md-4'>
+              <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
+            </div>
+            <div class='col-md-8'>
+              <div class='card-body'>
+                <h5 class='card-title'>{$record["event_id"]}</h5>
+                <p class='card-text'>{$record["user_id"]}'</p>
+              </div>
+            </div>
+          </div>
+          <div class='row g-0'>
+              <div class='card-body'>
+            <p class='card-text text-white'>
+              主催者からのひとこと
+            </p>
+              </div>
+          </div>
+        </div>
+     </a>
+    ";
+
+/*
+        $output .= "<tr>";
+        $output .= "<td><a href=''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''>{$record["name"]}</a></td>";
+        $output .= "<td>" . date("Y/n/j", strtotime($record["date_start"])) . "</td>";
+        $output .= "<td>" . date("Y/n/j", strtotime($record["date_end"])) . "</td>";
+        $output .= "<td>{$record["range"]}</td>";
+        $output .= "<td>{$record["upper_limit"]}</td>";
+        $output .= "<td>{$record["organizer_message"]}</td>";
+        // edit deleteリンクを追加
+        // $output .= "<td><a href='todo_edit.php?id={$record["id"]}'>edit</a></td>";
+        // $output .= "<td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>";
+        $output .= "</tr>";
+*/
+    // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
+    // 今回は以降foreachしないので影響なし
+    unset($value);
+
+  }
+  $output .="</div>";
+
+?>
+
+<?= $output ?>

@@ -122,7 +122,7 @@ if ($pu_status == false) {
             
             <p class="plan_number_of_people">参加人数</p>
             
-            <p>主催者:<a href=user.php?id=><?= $_SESSION["nickname"] ?></a></p>
+            <p>主催者:<a href=user.php?id=><?= $p_record["user_id"] ?></a></p>
             
             <p name="" id="" cols="30" rows="10">主催者から一言</p>
             
