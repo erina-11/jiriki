@@ -126,3 +126,14 @@
     border-radius: 1rem;
   }
   
+  .tab {
+    cursor: default;
+  }
+
+  .tab-menu {
+    cursor: pointer;
+  }
+
+  .inactive {
+    display: none;
+  }
