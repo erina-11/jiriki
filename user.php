@@ -57,13 +57,12 @@ if ($status == false) {
         <script src="header.js"></script>
     </header>
     
-
- <h2><?= $record['nickname'] ?></h2>
+　<h2><?= $record['nickname'] ?></h2>
         
     <div class="container">
         <div class="row">
             <div class="col-6">
-            <img width="250" height="100" src=img/{$record['icon']} alt="ここにはiconが表示されます" >
+            <img width="250" height="100" src=img/{$record['icon']} alt="ここにはアイコンが表示されます" >
             </div>
             
             <div class="col-2">
