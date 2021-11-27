@@ -10,12 +10,10 @@
 </head>
 
 <body>
-    <header>
-        <!-- <?php include('header.html'); ?> -->
-        <script src="header.js"></script>
-       <img src="img/logo.png" alt="logo.png">
-        <h1>イベントを企画することができます</h1>
+        <?php include('header.php'); ?>
     </header>
+    <div class="header_space"></div>
+    <h1>イベントを企画することができます</h1>
 
     <form action="plan_act.php" method="post">
         <div class="plan_card">
@@ -33,7 +31,10 @@
     <tr>
       <th scope="row"></th>
       <td><label for="plan_img">教材イメージ: </label></td>
-      <td><input type="file" name="plan_img" id="plan_img"></td>
+      <td><input type="file" name="plan_img" id="plan_img" accept='image/*' onchange="previewImage(this);">
+          <br>プレビュー:<img id="preview" src="" style="max-width:200px;">
+      </td>
+
     </tr>
     <tr>
       <th scope="row"2</th>
@@ -76,3 +77,14 @@
 </body>
 
 </html>
+
+<script>
+function previewImage(obj)
+{
+	var fileReader = new FileReader();
+	fileReader.onload = (function() {
+		document.getElementById('preview').src = fileReader.result;
+	});
+	fileReader.readAsDataURL(obj.files[0]);
+}
+</script>
