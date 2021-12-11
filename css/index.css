@@ -104,10 +104,6 @@
     margin-top: 75px ;
   }
   
-
-  body {
-  }
-  
   .chat{
     max-width: 600px;
     margin: 0 auto;
@@ -136,4 +132,12 @@
 
   .inactive {
     display: none;
+  }
+
+  .action_expansion {
+    transition:transform 0.3s;
+  }
+
+  .action_expansion :hover {
+    transform:scale(1.1);
   }
