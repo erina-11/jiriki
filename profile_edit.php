@@ -22,62 +22,68 @@ $status = $stmt->execute();
 // exit();
 
 if ($status == false) {
-    // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
-    $error = $stmt->errorInfo();
-    echo json_encode(["error_msg" => "{$error[2]}"]);
-    exit();
+  // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
+  $error = $stmt->errorInfo();
+  echo json_encode(["error_msg" => "{$error[2]}"]);
+  exit();
 } else {
-    // 正常にSQLが実行された場合は指定の11レコードを取得
-    // fetch()関数でSQLで取得したレコードを取得できる
-    $record = $stmt->fetch(PDO::FETCH_ASSOC); // データを取得する際のデータの形を指定できる。参考：https://blog.senseshare.jp/fetch-mode.html
+  // 正常にSQLが実行された場合は指定の11レコードを取得
+  // fetch()関数でSQLで取得したレコードを取得できる
+  $record = $stmt->fetch(PDO::FETCH_ASSOC); // データを取得する際のデータの形を指定できる。参考：https://blog.senseshare.jp/fetch-mode.html
 }
- var_dump($record);
+var_dump($record);
 // exit();
 
 include('header.php'); ?>
-        </header>
+</header>
 <div class="header_space"></div>
 
 <body>
 
-    <form action="profile_edit.php" method="post">
-   
- <table class="table">
-  
-  <tbody>
-    <tr>
-      <td>アイコン</td>
-      <td><input type="file" class="form-control-file" id="exampleFormControlFile1" accept='image/*' onchange="previewImage(this);">
-　        プレビュー:<br>
-　        <img id="preview" src="" style="max-width:200px;">
-      </td>
-    </tr>
+  <form action="profile_edit_act.php" method="post">
 
-    <tr>
-      <td>ニックネーム</td>
-      <td><input type="text" value="<?= $record['nickname'] ?>" class="form-control" aria-label="Text input with radio button"></td>
-    </tr>  
-      
-    <tr>
-      <td>メールアドレス</td>
-      <td><input type="text" value="<?= $record['mail_address'] ?>" class="form-control" aria-label="Text input with radio button"></td>
-    </tr> 
+    <table class="table">
 
-    <tr>
-      <td>パスワード</td>
-      <td><input type="text" value="<?= $record['password'] ?>" class="form-control" aria-label="Text input with radio button"></td>
-    </tr> 
+      <tbody>
+        <tr>
+          <td>アイコン</td>
+          <td><input type="file" class="form-control-file" id="exampleFormControlFile1" accept='image/*' onchange="previewImage(this);">
+            　 プレビュー:<br>
+            　 <img id="preview" src="" style="max-width:200px;">
+          </td>
+        </tr>
 
-  </tbody>
+        <tr>
+          <td>ニックネーム</td>
+          <td><input type="text" name="nickname" value="<?= $record['nickname'] ?>" class="form-control" aria-label="Text input with radio button"></td>
+        </tr>
 
-</table>
+        <tr>
+          <td>メールアドレス</td>
+          <td><input type="text" name="mail_address" value="<?= $record['mail_address'] ?>" class="form-control" aria-label="Text input with radio button"></td>
+        </tr>
 
-                           <input type="button" value="送信">
+        <tr>
+          <td>パスワード</td>
+          <td><input type="text" name="password" value="<?= $record['password'] ?>" class="form-control" aria-label="Text input with radio button"></td>
+        </tr>
+
+        <tr>
+          <td>プロフィール</td>
+          <td><input type="text" name="profile" value="<?= $record['profile'] ?>" class="form-control" aria-label="Text input with radio button"></td>
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+    <input type="submit" value="送信">
   </form>
 
-    <div>
-        <a href="index.php">HOME</a>
-    </div>
+  <div>
+    <a href="index.php">HOME</a>
+  </div>
 
 </body>
 
@@ -85,12 +91,11 @@ include('header.php'); ?>
 <?php include('footer.php'); ?>
 
 <script>
-function previewImage(obj)
-{
-	var fileReader = new FileReader();
-	fileReader.onload = (function() {
-		document.getElementById('preview').src = fileReader.result;
-	});
-	fileReader.readAsDataURL(obj.files[0]);
-}
+  function previewImage(obj) {
+    var fileReader = new FileReader();
+    fileReader.onload = (function() {
+      document.getElementById('preview').src = fileReader.result;
+    });
+    fileReader.readAsDataURL(obj.files[0]);
+  }
 </script>
