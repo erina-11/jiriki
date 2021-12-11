@@ -40,7 +40,7 @@ include('header.php'); ?>
 
 <body>
 
-    <form action="profile_edit.php" method="post">
+    <form action="profile_edit_act.php" method="post">
    
  <table class="table">
   
@@ -68,6 +68,12 @@ include('header.php'); ?>
       <td><input type="text" value="<?= $record['password'] ?>" class="form-control" aria-label="Text input with radio button"></td>
     </tr> 
 
+    <tr>
+      <td>プロフィール</td>
+      <td><input type="text" value="<?= $record['profile'] ?>" class="form-control" aria-label="Text input with radio button"></td>
+    </tr> 
+
+  
   </tbody>
 
 </table>
