@@ -109,6 +109,7 @@ $output .= "</div>";
       <a href="profile_edit.php">会員情報変更</a>
       <a href="staff_page.php">スタッフ一覧</a>
       <a href="qanda.html">お問い合わせ</a>
+      <a href="test.php">テスト（関係者以外立入禁止）</a>
 
     </div>
   </div>
