@@ -12,8 +12,8 @@
             <label for="formGroupExampleInput">nickname</label>
             <input type="text" name="nickname" class="form-control">
 
-            <label for="formGroupExampleInput">profeil</label>
-            <input type="text" name="profeil" class="form-control">
+            <label for="formGroupExampleInput">profile</label>
+            <input type="text" name="profile" class="form-control">
 
             <label for="formGroupExampleInput">password</label>
             <input type="text" name="password" class="form-control">
