@@ -89,6 +89,12 @@ $output .= "</div>";
 <?php include('header.php'); ?>
 </header>
 
+<fieldset>
+  <legend>イベント一覧（一覧画面）</legend>
+  <a href="plan.php">イベントを企画する</a>
+  <a href="logout.php">ログアウト</a>
+
+</fieldset>
 <div class="header">
   <div class="header_left">
     <a href="">HOME</a>
@@ -114,13 +120,6 @@ $output .= "</div>";
     </div>
   </div>
 </div>
-
-<fieldset>
-  <legend>イベント一覧（一覧画面）</legend>
-  <a href="plan.php">イベントを企画する</a>
-  <a href="logout.php">ログアウト</a>
-
-</fieldset>
 
 <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
 <?= $output ?>
