@@ -37,7 +37,7 @@ $pdo = connect_to_db();
 // データ登録SQL作成
 $sql = 'INSERT INTO test_hi_user_table (id, nickname, profeil, password) VALUES ( :id, :nickname, :profeil, :password )';
 
-// SQL準備&実行
+// SQL準備&実行 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
@@ -60,3 +60,4 @@ if ($status == false) {
     header("Location:test-hi.php");
     exit();
 }
+
