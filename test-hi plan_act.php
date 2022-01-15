@@ -35,7 +35,7 @@ $password = $_POST['password'];
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = 'INSERT INTO test-hi-user-table (id, nickname, profeil, password) VALUES ( :id, :nickname, :profeil, :password )';
+$sql = 'INSERT INTO test_hi_user_table (id, nickname, profeil, password) VALUES ( :id, :nickname, :profeil, :password )';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
