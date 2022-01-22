@@ -3,6 +3,13 @@
 include('functions.php');
 $pdo = connect_to_db();
 
+if (
+    !isset($_GET['id']) || $_GET['id'] == ''
+) {
+    echo json_encode(["error_msg" => "no input"]);
+    exit();
+}
+
 // データ取得SQL作成
 $sql = 'SELECT * FROM test_users_table';
 // var_dump($sql);
