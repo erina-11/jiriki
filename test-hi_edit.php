@@ -1,5 +1,6 @@
 <?php
 
+
 // 送信確認
 // var_dump($_POST);
 // exit();
@@ -54,24 +55,26 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
 }
-?>
+
+foreach ($result as $record){
+    $nickname = $record['nickname'];
+    $profeil = $record['profeil'];
+    $password = $record['password'];
+}                                                                                                   ?>
 </header>
 <?php include('header.php'); ?>
 <main>
 
     <form action="test-hi_plan_act.php" method="post">
         <div class="form-group">
-            <label for="formGroupExampleInput">id</label>
-            <input type="text" name="id" class="form-control">
-
             <label for="formGroupExampleInput">name</label>
-            <input type="text" name="nickname" class="form-control">
+            <input type="text" value="<?= $nickname ?>" name="nickname" class="form-control">
 
             <label for="formGroupExampleInput">e-mail</label>
-            <input type="text" name="profeil" class="form-control">
+            <input type="text"  value="<?= $profeil ?>" name="profeil" class="form-control">
 
             <label for="formGroupExampleInput">pw</label>
-            <input type="text" name="password" class="form-control">
+            <input type="text" value="<?= $password ?>" name="password" class="form-control">
 
             <input type="submit">
 

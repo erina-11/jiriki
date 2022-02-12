@@ -11,7 +11,6 @@ check_session_id(); // idチェック関数の実行
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-    !isset($_POST['id']) || $_POST['id'] == '' ||
     !isset($_POST['nickname']) || $_POST['nickname'] == '' ||
     !isset($_POST['profeil']) || $_POST['profeil'] == '' ||
     !isset($_POST['password']) || $_POST['password'] == '' 
@@ -25,7 +24,6 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
-$id = $_SESSION['id'];
 $nickname = $_POST['nickname'];
 $profeil = $_POST['profeil'];
 $password = $_POST['password'];
@@ -35,11 +33,10 @@ $password = $_POST['password'];
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = 'INSERT INTO test_hi_user_table (id, nickname, profeil, password) VALUES ( :id, :nickname, :profeil, :password )';
+$sql = 'INSERT INTO test_hi_user_table (nickname, profeil, password) VALUES (:nickname, :profeil, :password )';
 
 // SQL準備&実行 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 $stmt->bindValue(':profeil', $profeil, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
