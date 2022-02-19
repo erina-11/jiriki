@@ -21,14 +21,15 @@ $password = $_POST['password'];
 
 $pdo = connect_to_db();
 
-$sql = 'INSERT INTO test_users_table (id, nickname, password, profile)
-VALUES (:id, :nickname, :password, :profile)';
+$sql = 'UPDATE `test_users_table` SET `nickname`=:nickname,`password`=:password,`profile`=:profile WHERE id = :id';
+
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->bindValue(':profile', $profile, PDO::PARAM_STR);
+
 $status = $stmt->execute();
 
 if ($status == false) {

@@ -1,5 +1,6 @@
-<?php include('header.php');
+<?php
 
+session_start();
 include('functions.php');
 $pdo = connect_to_db();
 
@@ -10,12 +11,15 @@ if (
     exit();
 }
 
+$id = $_GET['id'];
+
 // データ取得SQL作成
-$sql = 'SELECT * FROM test_users_table';
+$sql = "SELECT * FROM `test_users_table` WHERE id = :id ";
 // var_dump($sql);
 // exit();
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $status = $stmt->execute();
 
 // データ登録処理後
@@ -35,12 +39,13 @@ if ($status == false) {
 
 $output = "";
 foreach ($result as $record) {
-    $rid = $record['id'];
-    $output .= implode($record) .
-        "<a href='test_edit.php'>編集</a>" .
-        "<a href='test_delete.php?id=$rid' >削除</a>" .
-        "<br>";
+    $id = $record['id'];
+    $nickname = $record['nickname'];
+    $profile = $record['profile'];
+    $password = $record['password'];
 }
+
+include('header.php');
 
 ?>
 
@@ -50,21 +55,21 @@ foreach ($result as $record) {
 
     <?= $output ?>
 
-    <form action="test_act.php" method="post">
+    <form action="test_edit_act.php" method="post">
 
         <div class="form-group">
 
             <label for="formGroupExampleInput">id</label>
-            <input type="text" name="id" class="form-control">
+            <input type="text" value="<?= $id ?>" name="id" class="form-control">
 
             <label for="formGroupExampleInput">nickname</label>
-            <input type="text" name="nickname" class="form-control">
+            <input type="text" value="<?= $nickname ?>" name="nickname" class="form-control">
 
             <label for="formGroupExampleInput">profile</label>
-            <input type="text" name="profile" class="form-control">
+            <input type="text" value="<?= $profile ?>" name="profile" class="form-control">
 
             <label for="formGroupExampleInput">password</label>
-            <input type="text" name="password" class="form-control">
+            <input type="text" value="<?= $password ?>" name="password" class="form-control">
 
             <input type="submit">
 

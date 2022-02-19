@@ -3,7 +3,10 @@
 session_start();
 include('functions.php');
 
-$user_id = $_SESSION['id'];
+if (!empty($_SESSION['id'])) {
+  $user_id = $_SESSION['id'];
+}
+
 // var_dump($user_id);
 // exit();
 $pdo = connect_to_db();

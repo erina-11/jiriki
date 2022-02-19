@@ -30,7 +30,7 @@ $output = "";
 foreach ($result as $record) {
     $rid = $record['id'];
     $output .= implode($record) .
-        "<a href='test_edit.php'>編集</a>" .
+        "<a href='test_edit.php?id=$rid'>編集</a>" .
         "<a href='test_delete.php?id=$rid' >削除</a>" .
         "<br>";
 }
