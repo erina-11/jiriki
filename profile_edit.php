@@ -31,7 +31,7 @@ if ($status == false) {
   // fetch()関数でSQLで取得したレコードを取得できる
   $record = $stmt->fetch(PDO::FETCH_ASSOC); // データを取得する際のデータの形を指定できる。参考：https://blog.senseshare.jp/fetch-mode.html
 }
-var_dump($record);
+//var_dump($record);
 // exit();
 
 include('header.php'); ?>
