@@ -156,7 +156,7 @@ if ($pu_status == false) {
  < 
  <td><p>参加メンバー</p>
 <!-- <?= $plan_p_record["plan_id"] ?> --></td>
- <td> <button><a href="plan_talk.php">参加する</a></button>
+ <td> <button><a href="plan_talk.php?id=<?= $_GET['id'] ?>">参加する</a></button>
 <form method="post" action="participate_act.php"></td>
  </tr>
 
