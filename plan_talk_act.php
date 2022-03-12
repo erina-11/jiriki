@@ -12,7 +12,7 @@ check_session_id(); // idチェック関数の実行
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
 
-   !isset($_POST['example']) || $_POST['example'] == '' 
+   !isset($_POST['id']) || $_POST['example'] || $_POST['example'] == '' 
 ) {
  // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
 
@@ -30,11 +30,13 @@ $example = $_POST['example'];
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = 'INSERT INTO plan_chat_table (example) VALUES (:example )';
+$sql = "INSERT INTO `plan_chat_table`(`plan_id`, `user_id`, `chat`,) VALUES (:plan_id,:user_id,:chat,)";
 
 // SQL準備&実行 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':example', $example, PDO::PARAM_STR);
+$stmt->bindValue(':user_id', $_SESSION['id'], PDO::PARAM_STR);
+$stmt->bindValue(':plan_id', $_POST, PDO::PARAM_STR);
+$stmt->bindValue(':chat', $example, PDO::PARAM_STR);
  //var_dump($stmt);
  //exit();
 

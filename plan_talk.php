@@ -33,9 +33,16 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
   }
+  foreach ($result as $record) {
+   $output .= $record['chat'];
+   $output .= $record['user_id'];
+   $output .= "<br>";
+   $output .= " ";
+  }
   ?>
 <form action="plan_talk_act.php" method="POST">
-
+<?= $output ?>
 <textarea name="example" rows="10" placeholder="自分の考えを共有しよう"></textarea>
 
 <button type="submit">送信</button>
+ 
