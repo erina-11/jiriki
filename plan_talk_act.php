@@ -11,11 +11,10 @@ check_session_id(); // idチェック関数の実行
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-
-   !isset($_POST['id']) || $_POST['example'] || $_POST['example'] == '' 
+   !isset($_POST['plan_id']) || $_POST['plan_id'] == ''  ||
+   !isset($_POST['example']) || $_POST['example'] == '' 
 ) {
  // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
-
     echo json_encode(["error_msg" => "no input"]);
     exit();
 }
@@ -51,7 +50,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:test-hi.php");
+    header("Location:plan_talk.php");
     exit();
 }
 
