@@ -1,5 +1,6 @@
 <?php
 
+
 // 送信確認
 // var_dump($_POST);
 // exit();
@@ -30,7 +31,7 @@ $pdo = connect_to_db();
 
 // データ登録SQL作成
 // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
-$sql = 'DELETE FROM `test_hi_user_table` WHERE id=:id';
+$sql = 'SELECT `id`, `nickname`, `profeil`, `password` FROM `test_hi_user_table` WHERE id=:id';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
@@ -49,6 +50,38 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:test-hi.php");
-    exit();
+    // fetchAll()関数でSQLで取得したレコードを配列で取得できる
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
+    // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
+    // `.=`は後ろに文字列を追加する，の意味
 }
+
+foreach ($result as $record){
+    $nickname = $record['nickname'];
+    $profeil = $record['profeil'];
+    $password = $record['password'];
+}                                                                                                   ?>
+</header>
+<?php include('header.php'); ?>
+<main>
+
+    <form action="test-hi_plan_act.php" method="post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">name</label>
+            <input type="text" value="<?= $nickname ?>" name="nickname" class="form-control">
+
+            <label for="formGroupExampleInput">e-mail</label>
+            <input type="text"  value="<?= $profeil ?>" name="profeil" class="form-control">
+
+            <label for="formGroupExampleInput">pw</label>
+            <input type="text" value="<?= $password ?>" name="password" class="form-control">
+
+            <input type="submit">
+
+        </div>
+
+    </form>
+
+</main>
+
+<?php include('footer.php'); ?>

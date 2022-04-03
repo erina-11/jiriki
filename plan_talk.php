@@ -42,6 +42,11 @@ if ($status == false) {
    $output .= $record['user_id'];
    $output .= "<br>";
    $output .= " ";
+   $rid = $record['id'];
+$output .= implode($record) .
+    "<a href='plan_talk_edit.php?id=$plan_id'>編集</a>" .
+    "<a href='plan_talk_delete.php?plan_id=$plan_id' >削除</a>" .
+    "<br>";
   }
   ?>
 <form action="plan_talk_act.php" method="POST">
