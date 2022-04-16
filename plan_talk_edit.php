@@ -12,7 +12,8 @@ check_session_id(); // idチェック関数の実行
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-    !isset($_GET['id']) || $_GET['id'] == '' 
+    !isset($_POST['chat']) || $_POST['chat'] == ''  ||
+    !isset($_GET['plan_id']) || $_GET['plan_id'] == '' 
     ) 
 {
     // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
@@ -31,11 +32,11 @@ $pdo = connect_to_db();
 
 // データ登録SQL作成
 // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
-$sql = 'SELECT `id`, `nickname`, `profeil`, `password` FROM `test_hi_user_table` WHERE id=:id';
+$sql = 'SELECT `chat` FROM `plan_chat_table` WHERE id=:id';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->bindValue(':plan_id', $id, PDO::PARAM_INT);
 // var_dump($stmt);
 // exit();
 
@@ -65,7 +66,7 @@ foreach ($result as $record){
 <?php include('header.php'); ?>
 <main>
 
-    <form action="test-hi_plan_act.php" method="post">
+    <form action="plan_talk?id=".$plan_id[plan_id] method="post">
         <div class="form-group">
             <label for="formGroupExampleInput">name</label>
             <input type="text" value="<?= $nickname ?>" name="nickname" class="form-control">
