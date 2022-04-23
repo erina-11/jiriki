@@ -2,7 +2,6 @@
 
 session_start();
 include('functions.php');
-
 $plan_id = $_GET['id'];
 
 if(!empty($_SESSION['id'])) {
@@ -36,22 +35,28 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
   }
+  // var_dump($result);
+  // exit();
   foreach ($result as $record) {
-   $output .= $record['chat'];
-   $output .= "<br>";
+    $output .= "<p>Chat:";
+    $output .= $record['chat'];
+   $output .= "<p>User_ID:";
    $output .= $record['user_id'];
    $output .= "<br>";
    $output .= " ";
    $rid = $record['id'];
-$output .= implode($record) .
-    "<a href='plan_talk_edit.php?id=$rid'>編集</a>" .
-    "<a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a>" .
-    "<br>";
-  }
+    $output .=/* implode(',',$record) .*/
+        "<a href='plan_talk_edit.php?id=$rid&plan_id=$plan_id'>編集</a>" .
+        "<a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a>" .
+        "<br>";
+    }
   ?>
 <form action="plan_talk_act.php" method="POST">
+<div>
 <?= $output ?>
 <textarea name="example" rows="10" placeholder="自分の考えを共有しよう"></textarea>
 <input type="hidden" name="plan_id" value="<?= $plan_id?>">
 <button type="submit">送信</button>
+</div>
+</form>
  
