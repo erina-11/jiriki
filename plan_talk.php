@@ -13,11 +13,12 @@ if(!empty($_SESSION['id'])) {
 $pdo = connect_to_db();
 
 // データ取得SQL作成
-$sql = 'SELECT * FROM plan_chat_table';
+$sql = 'SELECT * FROM plan_chat_table WHERE plan_id=:plan_id';
 // var_dump($sql);
 // exit();
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':plan_id', $plan_id, PDO::PARAM_INT);
 $status = $stmt->execute();
 
 // データ登録処理後
@@ -38,16 +39,17 @@ if ($status == false) {
   // var_dump($result);
   // exit();
   foreach ($result as $record) {
-    $output .= "<p>Chat:";
-    $output .= $record['chat'];
-   $output .= "<p>User_ID:";
-   $output .= $record['user_id'];
+    $output .= "Chat:";
+    $output .= $record['chat'];   
+    $output .= "User_ID:";
+    $output .= $record['user_id'];
+    $output .= "Created_at:";
+    $output .= $record['created_at'];
    $output .= "<br>";
-   $output .= " ";
    $rid = $record['id'];
     $output .=/* implode(',',$record) .*/
-        "<a href='plan_talk_edit.php?id=$rid&plan_id=$plan_id'>編集</a>" .
-        "<a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a>" .
+        "<button><a href='plan_talk_edit.php?id=$rid&plan_id=$plan_id'>編集</a></button>" .
+        "<button><a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a></button>" .
         "<br>";
     }
   ?>
@@ -56,7 +58,8 @@ if ($status == false) {
 <?= $output ?>
 <textarea name="example" rows="10" placeholder="自分の考えを共有しよう"></textarea>
 <input type="hidden" name="plan_id" value="<?= $plan_id?>">
-<button type="submit">送信</button>
+<input type="hidden" name="update_at" value="<?= $update_at?>">
+<button type="submit">投稿</button>
 </div>
 </form>
  
