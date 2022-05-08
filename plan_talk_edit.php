@@ -14,7 +14,7 @@ check_session_id(); // idチェック関数の実行
 if (
     !isset($_GET['plan_id']) || $_GET['plan_id'] == '' 
     ) 
-{
+{ 
     // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
     echo json_encode(["error_msg" => "no input"]);
     exit();

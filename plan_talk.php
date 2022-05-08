@@ -39,19 +39,21 @@ if ($status == false) {
   // var_dump($result);
   // exit();
   foreach ($result as $record) {
-    $output .= "Chat:";
-    $output .= $record['chat'];   
     $output .= "User_ID:";
     $output .= $record['user_id'];
     $output .= "Created_at:";
     $output .= $record['created_at'];
-   $output .= "<br>";
+    $output .= "<br>";
+    $output .= "Chat:";
+    $output .= $record['chat'];   
    $rid = $record['id'];
-    $output .=/* implode(',',$record) .*/
-        "<button><a href='plan_talk_edit.php?id=$rid&plan_id=$plan_id'>編集</a></button>" .
-        "<button><a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a></button>" .
-        "<br>";
-    }
+    /*$output .=/* implode(',',$record) .*/
+    if ($user_id == $record['user_id'] ) {
+      $output .=  "<button><a href='plan_talk_edit.php?id=$rid&plan_id=$plan_id'>編集</a></button>" ;
+      $output .=  "<button><a href='plan_talk_delete.php?id=$rid&plan_id=$plan_id' >削除</a></button>" ;
+     }
+     $output .= "<br>";
+  }
   ?>
 <form action="plan_talk_act.php" method="POST">
 <div>
@@ -61,5 +63,8 @@ if ($status == false) {
 <input type="hidden" name="update_at" value="<?= $update_at?>">
 <button type="submit">投稿</button>
 </div>
+</form>
+<form action="index.php" method="POST">
+  <button>戻る</button>
 </form>
  
