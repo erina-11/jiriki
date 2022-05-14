@@ -7,7 +7,7 @@
 session_start(); // セッションの開始
 include('functions.php'); // 関数ファイル読み込み
 check_session_id(); // idチェック関数の実行
- 
+
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
@@ -28,6 +28,17 @@ $id = $_GET['id'];
 // exit();
 // DB接続
 $pdo = connect_to_db();
+
+$sql = 'SELECT * FROM plan_chat_table WHERE id=:id';
+
+
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$status = $stmt->execute();
+
+
+if ($user_id == $id ) {
+
 
 // データ登録SQL作成
 // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
@@ -51,6 +62,10 @@ if ($status == false) {
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
     header("Location:plan_talk.php?id=".$_GET['plan_id']);
+    exit();
+}
+} else {
+    header("Location:plan_talk_error.php?id=".$_GET['plan_id']);
     exit();
 }
 ?>
