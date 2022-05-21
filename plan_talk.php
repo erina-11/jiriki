@@ -49,8 +49,8 @@ if ($status == false) {
    $rid = $record['id'];
     /*$output .=/* implode(',',$record) .*/
     if ($user_id == $record['user_id'] ) {
-      $output .=  "<button><a href='plan_talk_edit.php?id=".$rid"&plan_id=".$plan_id"'>編集</a></button>" ;
-      $output .=  "<button><a href='plan_talk_delete.php?id=".$rid"&plan_id=".$plan_id"' >削除</a></button>" ;
+      $output .=  "<button><a href='plan_talk_edit.php?id=".$rid."&plan_id=".$plan_id."'>編集</a></button>" ;
+      $output .=  "<button><a href='plan_talk_delete.php?id=".$rid."&plan_id=".$plan_id."' >削除</a></button>" ;
      }
      $output .= "<br>";
   }
