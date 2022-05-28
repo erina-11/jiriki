@@ -1,8 +1,8 @@
 <?php
 
 // 送信確認
-// var_dump($_POST);
-// exit();
+ //var_dump($plan_id);
+ //exit();
 
 session_start(); // セッションの開始
 include('functions.php'); // 関数ファイル読み込み
@@ -43,6 +43,10 @@ $stmt->bindValue(':chat', $example, PDO::PARAM_STR);
  //var_dump($status);
  //exit();
 // データ登録処理後
+
+
+//var_dump($_POST['plan_id']);
+//exit();
 if ($status == false) {
     // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
     $error = $stmt->errorInfo();

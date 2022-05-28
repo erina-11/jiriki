@@ -2,7 +2,7 @@
 
 session_start();
 include('functions.php');
-$plan_id = $_GET['id'];
+$plan_id = $_GET['plan_id'];
 
 if(!empty($_SESSION['id'])) {
   $user_id = $_SESSION['id'];
@@ -61,6 +61,7 @@ if ($status == false) {
 <textarea name="example" rows="10" placeholder="自分の考えを共有しよう"></textarea>
 <input type="hidden" name="plan_id" value="<?= $plan_id?>">
 <input type="hidden" name="update_at" value="<?= $update_at?>">
+<input type="hidden" name="user_id" value="<?= $user_id?>">
 <button type="submit">投稿</button>
 </div>
 </form>

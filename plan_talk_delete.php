@@ -8,10 +8,15 @@ session_start(); // セッションの開始
 include('functions.php'); // 関数ファイル読み込み
 check_session_id(); // idチェック関数の実行
 
+if (!empty($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+  }
+
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-    !isset($_GET['id']) || $_GET['id'] == ''  
+    !isset($_GET['id']) || $_GET['id'] == '' ||
+    !isset($_GET['plan_id']) || $_GET['plan_id'] == ''  
   
     ) 
 {
@@ -24,6 +29,7 @@ if (
 
 // 受け取ったデータを変数に入れる
 $id = $_GET['id'];
+$plan_id = $_GET['plan_id'];
 // var_dump($plan_message);
 // exit();
 // DB接続
@@ -36,9 +42,10 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 
-var_dump($user_id);
-exit();
-if ($user_id == $id ) {
+
+//var_dump($user_id);
+//exit();
+if ($user_id == $_SESSION['id'] ) {
 
  // データ登録SQL作成
  // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
@@ -60,7 +67,11 @@ if ($status == false) {
     echo json_encode(["error_msg" => "{$error[2]}"]);
     exit();
 } else {
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
+    foreach ($result as $record){
+        $user_id = $record['user_id'];
+    }   
     header("Location:plan_talk.php?plan_id=".$_GET['plan_id']);
     exit();
 }
