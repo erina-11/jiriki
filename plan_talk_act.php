@@ -54,7 +54,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:plan_talk.php?id=".$_POST['plan_id']);
+    header("Location:plan_talk.php?plan_id=".$_POST['plan_id']);
     exit();
 }
 

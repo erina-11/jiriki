@@ -76,7 +76,7 @@ if ($status == false) {
     exit();
 }
 } else {
-    header("Location:plan_talk_error.php?plan_id=".$_GET['plan_id']."&id=".$_GET['id']);
+    header("Location:plan_talk_error.php?plan_id=".$_GET['plan_id']."&plan_id=".$_GET['id']);
     exit();
 }
 ?>
