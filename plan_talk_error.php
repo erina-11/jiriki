@@ -27,7 +27,7 @@ $plan_id = $_GET['plan_id'];
 <h1>日本語：</h1>
 <h2>😊あなたには消す権限がありません😊</h2>
 <h3>いぇｙ。残念でした。!(^^)!</h3><br>
-
+ 
 <h1>English: </h1>
 <h2>😊 You don't have permission to erase 😊</h2>
 <h3>yey. It was too bad.! (^^)!</h3><br>
