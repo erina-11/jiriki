@@ -8,9 +8,9 @@ include("functions.php");
 
 check_session_id();
 
-$p_id = $_GET['id']; //planのid indexから届いてる
-// var_dump($p_id);
-// exit();
+$p_id = $_GET['plan_id']; //planのid indexから届いてる
+//var_dump($p_id);
+//exit();
 
 $id = $_SESSION['id']; //ユーザのid
 // var_dump($id);
@@ -37,7 +37,7 @@ if ($p_status == false) {
     // $p_output = "";
 }
 //var_dump($p_record);
-// exit();
+//exit();
 
 $sql = 'SELECT * FROM users_table WHERE id=:id'; //ログインユーザーのidを参照
 $stmt = $pdo->prepare($sql); //ユーザidのSQL準備
@@ -156,7 +156,7 @@ if ($pu_status == false) {
  < 
  <td><p>参加メンバー</p>
 <!-- <?= $plan_p_record["plan_id"] ?> --></td>
- <td> <button><a href="plan_talk.php?id=<?= $_GET['id'] ?>">参加する</a></button>
+ <td> <button><a href="plan_talk.php?plan_id=<?= $p_id ?>">参加する</a></button>
 <form method="post" action="participate_act.php"></td>
  </tr>
 

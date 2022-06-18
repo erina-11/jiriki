@@ -40,7 +40,7 @@ $output .= "<div class='d-flex flex-wrap'>";
 foreach ($result as $record) {
 
   $output .= "
-      <a href='plan_details.php?id={$record["id"]}'>
+      <a href='plan_details.php?plan_id={$record["id"]}'>
         <div class='action_expansion'>
           <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
             <div class='row g-0'>

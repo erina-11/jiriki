@@ -8,8 +8,8 @@ if(!empty($_SESSION['id'])) {
   $user_id = $_SESSION['id'];
 }
 
-// var_dump($user_id);
-// exit();
+#var_dump($_SESSION);
+#exit();
 $pdo = connect_to_db();
 
 // データ取得SQL作成
@@ -20,6 +20,8 @@ $sql = 'SELECT * FROM plan_chat_table WHERE plan_id=:plan_id';
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':plan_id', $plan_id, PDO::PARAM_INT);
 $status = $stmt->execute();
+
+
 
 // データ登録処理後
 if ($status == false) {
@@ -41,6 +43,31 @@ if ($status == false) {
   foreach ($result as $record) {
     $output .= "User_ID:";
     $output .= $record['user_id'];
+
+      //usernameをとってくるところ
+    $sql = "SELECT * FROM users_table WHERE id=:id";
+    // var_dump($sql);
+    // exit();
+    // SQL準備&実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':id', $record['user_id'], PDO::PARAM_STR);
+    $status = $stmt->execute();
+
+    $user_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     // echo "<pre>";
+    //var_dump($user_info["0"]["nickname"]);
+    //echo "</pre>";
+    //exit();
+    foreach ($user_info as $user_infomation){
+      $user_infomation = $user_info["0"]["nickname"];
+     
+
+      $output .= "<a href=user.php>User Name:</a>";
+      $output .= $user_info["0"]["nickname"];
+    } 
+    //おわり
+
+
     $output .= "Created_at:";
     $output .= $record['created_at'];
     $output .= "<br>";

@@ -60,7 +60,7 @@ if ($status == false) {
 foreach ($result as $record){
     $chat = $record['chat'];
 }                                                                                                   ?>
-
+                                                                                
 <?php include('header.php'); ?>
 </header>
 <main>
