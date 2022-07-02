@@ -33,6 +33,11 @@ if ($status == false) {
 // exit();
 
 
+    #echo "<pre>";
+    #var_dump($record);
+    #echo "</pre>";
+    #exit();
+
 ?>
 
 
@@ -51,18 +56,13 @@ if ($status == false) {
 <body>
    
 <!-- <form action="profile_edit.php" method="get"> -->
-   
-    <header>
-    <!-- <?php include('header.html'); ?> -->
-        <script src="header.js"></script>
-    </header>
     
-　<h2><?= $record['nickname'] ?></h2>
+ <h2><?= $record["nickname"] ?></h2>
         
     <div class="container">
         <div class="row">
             <div class="col-6">
-            <img width="250" height="100" src=img/{$record['icon']} alt="ここにはアイコンが表示されます" >
+            <img width="250" height="100" src=<?= $record["icon"] ?> alt="ここにはアイコンが表示されます" >
             </div>
             
             <div class="col-2">

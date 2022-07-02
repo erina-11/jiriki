@@ -62,8 +62,14 @@ if ($status == false) {
       $user_infomation = $user_info["0"]["nickname"];
      
 
-      $output .= "<a href=user.php>User Name:</a>";
-      $output .= $user_info["0"]["nickname"];
+      $output .= "<a href='user.php?id=".$user_info["0"]["id"]."'>User Name:</a>";
+      $output .= "<a href='user.php?id=".$user_info["0"]["id"]."'>".$user_info["0"]["nickname"]."</a>";
+      
+      //echo "<pre>";
+      //var_dump($user_info);
+      //echo "</pre>";
+      //exit();
+      
     } 
     //おわり
 
