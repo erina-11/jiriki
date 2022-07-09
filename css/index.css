@@ -6,7 +6,7 @@
     background: #f6f5f4;
   }
 
-/* header */
+  /* header */
   header {
     width: 100%;
     height: 75px;
@@ -14,59 +14,72 @@
     padding-left: 30px;
     padding-right: 30px;
     box-sizing: border-box;
-    display: flex; /* flexboxを作る */
-    align-items: center; /* 上下中央に揃える */
-    justify-content: space-between; /* 両端に配置 */
+    display: flex;
+    /* flexboxを作る */
+    align-items: center;
+    /* 上下中央に揃える */
+    justify-content: space-between;
+    /* 両端に配置 */
     position: fixed;
     z-index: 100;
     top: 0;
     color: #1a1a1a;
   }
+
   .header_img {
     /* text-align: center; */
-    margin-bottom:0;
-    margin-left:auto;
-    margin-right:auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 2px;
   }
+
   .header_menu {
-    margin-right:20px;
-    margin-bottom:0;
+    margin-right: 20px;
+    margin-bottom: 0;
     margin-top: 2px;
   }
+
   header li:first-child {
     margin-right: auto;
   }
+
   .header_space {
-    height: 75px ;
+    height: 75px;
   }
 
-/*footer*/
+  /*footer*/
   footer {
     width: 100%;
     height: 80px;
     background: #4d4d4d;
     box-sizing: border-box;
-    display: flex; /* flexboxを作る */
-    align-items: center; /* 上下中央に揃える */
-    justify-content: space-between; /* 両端に配置 */
+    display: flex;
+    /* flexboxを作る */
+    align-items: center;
+    /* 上下中央に揃える */
+    justify-content: space-between;
+    /* 両端に配置 */
     z-index: 100;
-    padding:30px 25% ;
+    padding: 30px 25%;
   }
 
   footer a {
-    color: #ffffff ;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
   }
 
-  footer a:hover{
-    color: #00ffff ;
+  footer a:hover {
+    color: #00ffff;
     text-decoration: none;
     font-weight: bold;
   }
 
-/*その他*/
+
+
+
+  /*その他*/
   h1 a {
     text-decoration: none;
   }
@@ -87,41 +100,42 @@
     color: black;
   }
 
-  
-/* aboutページ */
-  .about_content h4 { 
-    text-align: center ;
-    line-height: 150% ;
+
+  /* aboutページ */
+  .about_content h4 {
+    text-align: center;
+    line-height: 150%;
   }
+
   .about_content h2 {
-    text-align: center ;
-    font-size: 225% ;
+    text-align: center;
+    font-size: 225%;
     text-decoration: underline;
   }
 
 
   main {
-    margin-top: 75px ;
+    margin-top: 75px;
   }
-  
-  .chat{
+
+  .chat {
     max-width: 600px;
     margin: 0 auto;
   }
-  
-  .message-icon{
+
+  .message-icon {
     width: 48px;
     height: 48px;
     text-align: center;
     line-height: 48px;
   }
-  
-  .message-text{
+
+  .message-text {
     display: inline-block;
     max-width: 70%;
     border-radius: 1rem;
   }
-  
+
   .tab {
     cursor: default;
   }
@@ -135,9 +149,9 @@
   }
 
   .action_expansion {
-    transition:transform 0.3s;
+    transition: transform 0.3s;
   }
 
   .action_expansion :hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
   }
