@@ -40,16 +40,16 @@ include('header.php'); ?>
 
 <body>
 
-  <form action="profile_edit_act.php" method="post">
+  <form action="profile_edit_act.php" method="post"  enctype="multipart/form-data">
 
     <table class="table">
 
       <tbody>
         <tr>
           <td>アイコン</td>
-          <td><input type="file" class="form-control-file" id="exampleFormControlFile1" accept='image/*' onchange="previewImage(this);">
-            　 プレビュー:<br>
-            　 <img id="preview" src="" style="max-width:200px;">
+          <td><input type="file" name="icon" class="form-control-file" id="exampleFormControlFile1" accept='image/*' onchange="previewImage(this);">
+              プレビュー:<br>
+              <img id="preview" src="" style="max-width:200px;">
           </td>
         </tr>
 

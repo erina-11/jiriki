@@ -5,6 +5,10 @@ session_start();
 include('functions.php');
 check_session_id();
 
+if(!empty($_SESSION['id'])) {
+    $user_id = $_SESSION['id'];
+  }
+
 $id = $_GET['id'];
 // var_dump($user_id);
 // exit();
@@ -33,10 +37,10 @@ if ($status == false) {
 // exit();
 
 
-    #echo "<pre>";
+   # echo "<pre>";
     #var_dump($record);
-    #echo "</pre>";
-    #exit();
+  #  echo "</pre>";
+   # exit();
 
 ?>
 
@@ -98,6 +102,10 @@ if ($status == false) {
     
     <div>
         <a href="">あなたが参加予定のイベント一覧</a>
+    </div>
+
+    <div>
+        <a href="direct_messege.php?talk_id=<?= $record["id"] ?>">ダイレクトメッセージを開始する</a>
     </div>
     
     <br>

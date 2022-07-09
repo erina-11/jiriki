@@ -5,10 +5,13 @@ session_start();
 include('functions.php');
 check_session_id();
 
+//var_dump($_POST);
+//exit();
 if (
     !isset($_POST['nickname']) || $_POST['nickname'] == '' ||
     !isset($_POST['mail_address']) || $_POST['mail_address'] == '' ||
     !isset($_POST['password']) || $_POST['password'] == '' ||
+    !isset($_POST['icon']) || $_POST['icon'] == '' ||
     !isset($_POST['profile']) || $_POST['profile'] == ''
 ) {
     echo json_encode(["error_msg" => "no input"]);
@@ -16,6 +19,7 @@ if (
     var_dump($_POST['mail_address']);
     var_dump($_POST['password']);
     var_dump($_POST['profile']);
+
     exit();
 }
 
@@ -24,6 +28,7 @@ $nickname = $_POST['nickname'];
 $mail_address = $_POST['mail_address'];
 $password = $_POST['password'];
 $profile = $_POST['profile'];
+$icon = $_POST['icon'];
 
 $pdo = connect_to_db();
 
@@ -35,9 +40,10 @@ $stmt->bindValue(':nickname', $nickname, PDO::PARAM_STR);
 $stmt->bindValue(':mail_address', $mail_address, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->bindValue(':profile', $profile, PDO::PARAM_STR);
+$stmt->bindValue(':icon', $icon, PDO::PARAM_STR);
 
-var_dump($stmt);
-exit();
+//var_dump($stmt);
+//exit();
 
 $status = $stmt->execute();
 
