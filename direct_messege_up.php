@@ -46,7 +46,7 @@ $stmt->bindValue(':chat', $chat, PDO::PARAM_STR);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 // var_dump($stmt);
 // exit();
-
+ 
 $status = $stmt->execute();
 //var_dump($_POST);
 //exit();

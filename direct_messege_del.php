@@ -52,7 +52,7 @@ if ($result['0']['user_id'] == $_SESSION['id'] ) {
  // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
  $sql = 'DELETE FROM `direct_messege` WHERE id=:id';
  
- // SQL準備&実行
+ // SQL準備&実行 
  $stmt = $pdo->prepare($sql);
  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
  // var_dump($stmt);

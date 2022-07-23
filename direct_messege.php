@@ -95,7 +95,7 @@ $status = $stmt->execute();
     foreach ($result as $record) {
       
   
-      
+       
       if ($user1_id == $record['user_id'] ){}
   
       $output .= "Created_at:";

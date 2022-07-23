@@ -117,7 +117,7 @@ $sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id AND user2_id = :user2
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':user1_id', $user1_id, PDO::PARAM_STR);
     $stmt->bindValue(':user2_id', $user2_id, PDO::PARAM_STR);
-    $status = $stmt->execute();
+    $status = $stmt->execute(); 
     $count = $stmt->fetchColumn();
     $room = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $output = "";

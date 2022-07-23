@@ -32,7 +32,7 @@ $pdo = connect_to_db();
 
 // データ登録SQL作成
 $sql = "INSERT INTO `direct_messege`(`talk_id`, `user_id`, `chat`) VALUES (:talk_id,:user_id,:chat)";
-
+ 
 // SQL準備&実行 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':user_id', $_SESSION['id'], PDO::PARAM_INT);
