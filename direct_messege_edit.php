@@ -12,6 +12,7 @@ check_session_id(); // idチェック関数の実行
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
+    !isset($_GET['user_id']) || $_GET['user_id'] == ''  ||
     !isset($_GET['talk_id']) || $_GET['talk_id'] == '' 
     ) 
 { 
@@ -23,6 +24,7 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
+$user_id = $_GET['user_id'];
 $id = $_GET['id'];
 $talk_id = $_GET['talk_id'];
 // var_dump($plan_message);
@@ -70,6 +72,7 @@ foreach ($result as $record){
             <br>
             <label for="formGroupExampleInput">Chat</label>
             <input type="text" value="<?= $chat ?>" name="chat" class="form-control">
+            <input type="hidden" value="<?= $user_id ?>" name="user_id" class="form-control">
             <input type="hidden" value="<?= $id ?>" name="id" class="form-control">
             <input type="hidden" value="<?= $talk_id ?>" name="talk_id" class="form-control">
             <input type="submit">

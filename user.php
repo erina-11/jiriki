@@ -8,7 +8,7 @@ check_session_id();
 if(!empty($_SESSION['id'])) {
     $user_id = $_SESSION['id'];
   }
-
+  $user2_id = $_GET['id'];
 $id = $_GET['id'];
 // var_dump($user_id);
 // exit();
@@ -103,11 +103,47 @@ if ($status == false) {
     <div>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
+<?php
 
-    <div>
-        <a href="direct_messege.php?talk_id=<?= $record["id"] ?>">ダイレクトメッセージを開始する</a>
-    </div>
-    
+
+if(!empty($_SESSION['id'])) {
+  $user1_id = $_SESSION['id'];
+}
+
+$sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id AND user2_id = :user2_id';
+// var_dump($sql);
+// exit();
+// SQL準備&実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':user1_id', $user1_id, PDO::PARAM_STR);
+    $stmt->bindValue(':user2_id', $user2_id, PDO::PARAM_STR);
+    $status = $stmt->execute();
+    $count = $stmt->fetchColumn();
+    $room = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $output = "";
+ //var_dump($count);
+ //exit();
+    if($count == 1) {
+        //var_dump($count);
+        //exit();
+        $output .=     "<div>";
+        $output .=     "<a href=direct_messege.php?talk_id=".$record['id']."&user_id=".$record['id'].">ダイレクトメッセージを開始する</a>";
+        $output .=     "</div>";
+    } else{
+    $sql = 'INSERT INTO `room`(`user1_id`, `user2_id`, `talk_id`) VALUES (:user1_id,:user2_id,:id)';
+     //var_dump($id);
+     //exit();
+    // SQL準備&実行
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':user1_id', $user1_id, PDO::PARAM_STR);
+    $stmt->bindValue(':user2_id', $user2_id, PDO::PARAM_STR);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $status = $stmt->execute();
+    echo "ページをリロードしてください。";
+    exit();
+    }
+    ?>
+    <?= $output ?>
     <br>
     
     <div>

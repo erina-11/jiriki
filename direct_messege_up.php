@@ -13,6 +13,7 @@ check_session_id(); // idチェック関数の実行
 if (
     !isset($_POST['chat']) || $_POST['chat'] == ''  ||
     !isset($_POST['id']) || $_POST['id'] == ''  ||
+    !isset($_POST['user_id']) || $_POST['user_id'] == ''  ||
     !isset($_POST['talk_id']) || $_POST['talk_id'] == ''  
   
     ) 
@@ -25,6 +26,7 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
+$user_id = $_POST["user_id"];
 $id = $_POST['id'];
 $chat = $_POST['chat'];
 $talk_id = $_POST['talk_id'];
@@ -46,8 +48,8 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 // exit();
 
 $status = $stmt->execute();
-// var_dump($status);
-// exit();
+//var_dump($_POST);
+//exit();
 // データ登録処理後
 if ($status == false) {
     // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
@@ -56,7 +58,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']);
+    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']."&user_id=".$_POST['talk_id']);
     exit();
 }
 ?>

@@ -16,6 +16,7 @@ if (!empty($_SESSION['id'])) {
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
     !isset($_GET['talk_id']) || $_GET['talk_id'] == '' ||
+    !isset($_GET['user_id']) || $_GET['user_id'] == ''  ||
     !isset($_GET['id']) || $_GET['id'] == ''  
   
     ) 
@@ -28,6 +29,7 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
+$user_id = $_GET["user_id"];
 $id = $_GET['id'];
 $talk_id = $_GET['talk_id'];
 // var_dump($plan_message);
@@ -36,16 +38,15 @@ $talk_id = $_GET['talk_id'];
 $pdo = connect_to_db();
 
 $sql = 'SELECT * FROM direct_messege WHERE id=:id';
-
-
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
-
-
-//var_dump($user_id);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+//echo "<pre>";
+//var_dump($result);
 //exit();
-if ($user_id == $_SESSION['id'] ) {
+//echo "</pre>";
+if ($result['0']['user_id'] == $_SESSION['id'] ) {
 
  // データ登録SQL作成
  // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
@@ -72,11 +73,12 @@ if ($status == false) {
     foreach ($result as $record){
         $user_id = $record['user_id'];
     }   
-    header("Location:direct_messege.php?talk_id=".$_GET['talk_id']);
+    
+    header("Location:direct_messege.php?talk_id=".$_GET['talk_id']."&user_id=".$_GET['user_id']);
     exit();
 }
 } else {
-    header("Location:direct_messege_del.php?talk_id=".$_GET['talk_id']);
+    header("Location:direct_messege_error.php?talk_id=".$_GET['talk_id']."&user_id=".$_GET['user_id']);
     exit();
 }
 ?>

@@ -12,6 +12,7 @@ check_session_id(); // idチェック関数の実行
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
    !isset($_POST['talk_id']) || $_POST['talk_id'] == ''  ||
+   !isset($_POST['user_id']) || $_POST['user_id'] == ''  ||
    !isset($_POST['example']) || $_POST['example'] == '' 
 ) {
  // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
@@ -22,6 +23,7 @@ if (
 // exit();
 
 // 受け取ったデータを変数に入れる
+$user_id = $_POST["user_id"];
 $example = $_POST['example'];
 // var_dump($password);
 // exit();
@@ -54,7 +56,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']);
+    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']."&user_id=".$_POST['user_id']);
     exit();
 }
 
