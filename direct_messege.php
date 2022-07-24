@@ -40,6 +40,8 @@ $stmt->bindValue(':talk_id', $talk_id, PDO::PARAM_INT);
 $status = $stmt->execute();
 // データ登録処理後
 
+//エラーが出てるから封印
+
   //usernameをとってくるところ
   #$sql = "SELECT * FROM users_table WHERE id=:id" ;
   //var_dump($record);
@@ -73,6 +75,7 @@ $status = $stmt->execute();
  #} 
  //おわり
 #}
+//ここまで
   if ($status == false) {
     // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
     $error = $stmt->errorInfo();
@@ -91,7 +94,20 @@ $status = $stmt->execute();
     #var_dump($result);
     #exit();
     #echo "</pre>";
-     
+    $output .= "<font color=red>バグについて:</font>";
+    $output .="<br>";
+    $output .= "<font color=red>1:たまに削除ボタンを押したら、「dirrect_messege_act.php」に飛ぶことがあります。そういう場合は、一回ページを戻ってページをリロードしてください。</font>";
+    $output .="<br>";
+    $output .= "<font color=red>2:ほかのユーザーからもこのDMを見ることができます。</font>";
+    $output .="<br>";
+    $output .="<br>";
+    $output .= "<font color=red>About the bug:</font>";
+    $output .="<br>";
+    $output .= "<font color=red>1: Sometimes when you press the delete button, it may fly to 「dirrect_messege_act.php」. In that case, go back and reload the page once.</font>";
+    $output .="<br>";
+    $output .= "<font color=red>2: Other users can also see this DM.</font>";
+    $output .="<br>";
+    
     foreach ($result as $record) {
       
   
