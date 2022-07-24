@@ -98,14 +98,14 @@ $status = $stmt->execute();
     $output .="<br>";
     $output .= "<font color=red>1:たまに削除ボタンを押したら、「dirrect_messege_act.php」に飛ぶことがあります。そういう場合は、一回ページを戻ってページをリロードしてください。</font>";
     $output .="<br>";
-    $output .= "<font color=red>2:ほかのユーザーからもこのDMを見ることができます。</font>";
+    $output .= "<font color=red>2:ほかのユーザーからもこのDMを見ることができます。(まだバグあり)</font>";
     $output .="<br>";
     $output .="<br>";
     $output .= "<font color=red>About the bug:</font>";
     $output .="<br>";
     $output .= "<font color=red>1: Sometimes when you press the delete button, it may fly to 「dirrect_messege_act.php」. In that case, go back and reload the page once.</font>";
     $output .="<br>";
-    $output .= "<font color=red>2: Other users can also see this DM.</font>";
+    $output .= "<font color=red>2: Other users can also see this DM.(still bug)</font>";
     $output .="<br>";
     
     foreach ($result as $record) {
