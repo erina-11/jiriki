@@ -12,7 +12,7 @@ if(!empty($_SESSION['id'])) {
 #exit();
 $pdo = connect_to_db();
 
-$sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id AND user2_id = :user2_id';
+$sql = 'SELECT COUNT(*) FROM room WHERE (user1_id=:user1_id AND user2_id = :user2_id) OR (user2_id=:user2_id AND user1_id = :user1_id)';
 // var_dump($sql);
 // exit();
 // SQL準備&実行
@@ -96,7 +96,7 @@ $status = $stmt->execute();
     #echo "</pre>";
     $output .= "<font color=red>バグについて:</font>";
     $output .="<br>";
-    $output .= "<font color=red>1:たまに削除ボタンを押したら、「dirrect_messege_act.php」に飛ぶことがあります。そういう場合は、一回ページを戻ってページをリロードしてください。</font>";
+    $output .= "<font color=red>1:たまに削除と編集ボタンを押したら、「dirrect_messege_act.php」に飛ぶことがあります。そういう場合は、一回ページを戻ってページをリロードしてください。</font>";
     $output .="<br>";
     $output .= "<font color=red>2:ほかのユーザーからもこのDMを見ることができます。(まだバグあり)</font>";
     $output .="<br>";
