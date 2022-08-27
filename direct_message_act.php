@@ -12,18 +12,18 @@ check_session_id(); // idチェック関数の実行
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
    !isset($_POST['talk_id']) || $_POST['talk_id'] == ''  ||
-   !isset($_POST['user_id']) || $_POST['user_id'] == ''  ||
+   !isset($_POST['user1_id']) || $_POST['user1_id'] == ''  ||
    !isset($_POST['example']) || $_POST['example'] == '' 
 ) {
  // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
     echo json_encode(["error_msg" => "no input"]);
     exit();
 }
-// var_dump($_POST);
-// exit();
+ //var_dump($_POST);
+ //exit();
 
 // 受け取ったデータを変数に入れる
-$user_id = $_POST["user_id"];
+$user_id = $_POST["user1_id"];
 $example = $_POST['example'];
 // var_dump($password);
 // exit();

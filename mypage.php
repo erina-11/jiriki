@@ -98,7 +98,22 @@ include('header.php');?>
     <div>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
-    
+    <?php
+    //バグ発生
+    if ($record == 1) {  
+        
+        //echo "<pre>";
+        //var_dump($record);
+        //echo "</pre>";
+        //exit();
+        "<div>";
+            "<i class=bi bi-key></i><svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class=bi bi-key viewBox=0 0 16 16></svg><a href=staff_login.php>スタッフページへ</a>";
+        "</div>";
+    }
+    ?>
+    <div>
+        <a href=staff_login.php>スタッフページへ</a>
+    </div>
     <br>
     
     <div>

@@ -12,7 +12,7 @@ if(!empty($_SESSION['id'])) {
 #exit();
 $pdo = connect_to_db();
 
-$sql = 'SELECT COUNT(*) FROM room WHERE (user1_id=:user1_id AND user2_id = :user2_id) OR (user2_id=:user2_id AND user1_id = :user1_id)';
+$sql = 'SELECT COUNT(*) FROM room WHERE (user1_id=:user1_id AND user2_id = :user2_id) OR (user2_id=:user2_id AND user1_id =:user1_id)';
 // var_dump($sql);
 // exit();
 // SQL準備&実行
@@ -112,7 +112,7 @@ $status = $stmt->execute();
       
   
        
-      if ($user1_id == $record['user_id'] ){}
+      if ($user1_id == $record['user1_id'] ){
   
       $output .= "Created_at:";
       $output .= $record['created_at'];
@@ -120,12 +120,14 @@ $status = $stmt->execute();
       $output .= "Chat:";
       $output .= $record['chat'];   
      $rid = $record['id'];
+      }
       /*$output .=/* implode(',',$record) .*/
-      if ($user1_id == $record['user_id'] ) {
+      if ($user1_id == $record['user1_id'] ) {
         $output .=  "<button><a href='direct_messege_edit.php?id=".$rid."&talk_id=".$talk_id."&user_id=".$user2_id."'>編集</a></button>" ;
         $output .=  "<button><a href='direct_messege_del.php?id=".$rid."&talk_id=".$talk_id."&user_id=".$user2_id."'>削除</a></button>" ;
+        $output .= "<br>";
        }
-       $output .= "<br>";
+       
     }
  
 
