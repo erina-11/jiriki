@@ -41,27 +41,13 @@ foreach ($result as $record) {
 
   $output .= "
       <a href='plan_details.php?plan_id={$record["id"]}'>
-        <div class='action_expansion'>
-          <div class='card mb-3 bg-info text-white' style='max-width: 540px;'> 
-            <div class='row g-0'>
-              <div class='col-md-4'>
-                <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
-              </div>
-              <div class='col-md-8'>
-                <div class='card-body'>
-                  <h5 class='card-title'>{$record["name"]}</h5>
-                  <p class='card-text'>{$record["organizer_message"]}'</p>
-                </div>
-              </div>
-            </div>
-            <div class='row g-0'>
-                <div class='card-body'>
-              <p class='card-text text-white'>
-                主催者からのひとこと
-              </p>
-                </div>
-            </div>
-          </div>
+        <div class='ueno'> 
+            <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
+            <h5 class='card-title'>{$record["name"]}</h5>
+            <p class='card-text'>{$record["organizer_message"]}'</p>
+            <p>
+              主催者からのひとこと
+            </p>
         </div>
      </a>
     ";
@@ -88,46 +74,47 @@ $output .= "</div>";
 ?>
 
 
+<?php include('head_top.php'); ?>
 
-<?php include('header.php'); ?>
-</header>
+<body>
+  <?php include('header_common.php'); ?>
 
-<fieldset>
-  <legend>イベント一覧（一覧画面）</legend>
-  <a href="plan.php">イベントを企画する</a>
-  <a href="logout.php">ログアウト</a>
+  <fieldset>
+    <legend>イベント一覧（一覧画面）</legend>
+    <a href="plan.php">イベントを企画する</a>
+    <a href="logout.php">ログアウト</a>
 
-</fieldset>
-<div class="header">
-  <div class="header_left">
-    <a href="">HOME</a>
-    <form action="search_list.php">
-      <select class="select">
-        <option value="cat1">過去</option>
-        <option value="cat2">開催予定</option>
-      </select>
-      <input type="search" name="search" placeholder="キーワードを入力">
-      <input type="submit" name="submit" value="検索">
-    </form>
-    <!-- <button>ホーム</button> -->
+  </fieldset>
+  <div class="header">
+    <div class="header_left">
+      <a href="">HOME</a>
+      <form action="search_list.php">
+        <select class="select">
+          <option value="cat1">過去</option>
+          <option value="cat2">開催予定</option>
+        </select>
+        <input type="search" name="search" placeholder="キーワードを入力">
+        <input type="submit" name="submit" value="検索">
+      </form>
+      <!-- <button>ホーム</button> -->
 
 
-    <div class="header_right">
-      <a href="login.php">ログイン</a>
-      <a href="register.html">新規会員登録</a>
-      <a href="profile_edit.php">会員情報変更</a>
-      <a href="staff_page.php">スタッフ一覧</a>
-      <a href="qanda.html">お問い合わせ</a>
-      <a href="test.php">テスト（関係者以外立入禁止）</a>
+      <div class="header_right">
+        <a href="login.php">ログイン</a>
+        <a href="register.html">新規会員登録</a>
+        <a href="profile_edit.php">会員情報変更</a>
+        <a href="staff_page.php">スタッフ一覧</a>
+        <a href="qanda.html">お問い合わせ</a>
+        <a href="test.php">テスト（関係者以外立入禁止）</a>
 
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
-<?= $output ?>
+  <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+  <?= $output ?>
 
-<?php include('footer.php'); ?>
+  <?php include('footer.php'); ?>
 
 
 </body>
