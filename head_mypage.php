@@ -17,5 +17,5 @@ if (empty($_SESSION['id'])) {
 
     <!-- 自身のCSS読み込み -->
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/top.css">
+    <link rel="stylesheet" href="css/mypage.css">
 </head>
