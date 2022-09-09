@@ -1,0 +1,13 @@
+body {
+    margin: 6;
+}
+
+.mypage-card {
+    border: 2px solid red;
+}
+
+p {
+    font-size: 20;
+    line-height: 1.6;
+    color: red;
+}

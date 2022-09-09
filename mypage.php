@@ -32,52 +32,45 @@ if ($status == false) {
 // var_dump($record);
 // exit();
 
-include('header.php');?>
-        </header>
-<div class="header_space"></div>
+?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイページ</title>
-</head>
+<?php include('head_mypage.php'); ?>
 
 <body>
-   
-<!-- <form action="profile_edit.php" method="get"> -->
-   
-    
+    <?php include('header_common.php'); ?>
+    <!-- <form action="profile_edit.php" method="get"> -->
 
- <h2><?= $record['nickname'] ?></h2>
-        
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-            <img width="250" height="100" src="img/staff/テストくん.jpg" alt="テストくんが出るはずです" >
-            </div>
-            
-            <div class="col-2">
-            <p>開催したイベント数　5</p>
-            </div>
-            
-            <div class="col-2">
-            <p>フォロワー100</p>
-            </div>
-            <div class="col-2">
-            <p>フォロー中80</p>
+
+
+    <div class="mypage-card">
+        <h2><?= $record['nickname'] ?></h2>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img width="250" height="100" src="img/staff/テストくん.jpg" alt="テストくんが出るはずです">
+                </div>
+
+                <div class="col-2">
+                    <p>開催したイベント数　5</p>
+                </div>
+
+                <div class="col-2">
+                    <p>フォロワー100</p>
+                </div>
+                <div class="col-2">
+                    <p>フォロー中80</p>
+                </div>
             </div>
         </div>
+
+        <p>吾輩はSAKANAである。ちゃんとした名前はまだ無い。どこで生れたかとんと見当がつかぬ。
+            何でも薄暗い漁船の上でピチピチ跳ねていた事だけは記憶している。
+            吾輩はここで始めて人間というものを見た...</p>
+
     </div>
 
-    <p>吾輩はSAKANAである。ちゃんとした名前はまだ無い。どこで生れたかとんと見当がつかぬ。
-        何でも薄暗い漁船の上でピチピチ跳ねていた事だけは記憶している。
-        吾輩はここで始めて人間というものを見た...</p>
 
     <div>
         <img class="icon" src="" alt="">
@@ -86,28 +79,28 @@ include('header.php');?>
     <div>
         <a href="profile_edit.php">プロフィール編集</a>
     </div>
-    
+
     <div>
         <a href="follow_list.php">フォロー中の主催者一覧</a>
     </div>
-    
+
     <div>
         <a href="plan_list.php">あなたが主催しているイベント一覧</a>
     </div>
-    
+
     <div>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
     <?php
     //バグ発生
-    if ($record == 1) {  
-        
+    if ($record == 1) {
+
         //echo "<pre>";
         //var_dump($record);
         //echo "</pre>";
         //exit();
         "<div>";
-            "<i class=bi bi-key></i><svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class=bi bi-key viewBox=0 0 16 16></svg><a href=staff_login.php>スタッフページへ</a>";
+        "<i class=bi bi-key></i><svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class=bi bi-key viewBox=0 0 16 16></svg><a href=staff_login.php>スタッフページへ</a>";
         "</div>";
     }
     ?>
@@ -115,15 +108,15 @@ include('header.php');?>
         <a href=staff_login.php>スタッフページへ</a>
     </div>
     <br>
-    
+
     <div>
         <a href="index.php">ホーム画面へ</a>
     </div>
-    
+
     <div>
         <a href="logout.php">ログアウト</a>
     </div>
-    
+
     <!-- </ form> -->
 
 </body>
