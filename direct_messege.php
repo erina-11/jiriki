@@ -109,7 +109,7 @@ $status = $stmt->execute();
     $output .="<br>";
     
     foreach ($result as $record) {
-      
+      sleep('1');
   
        
       if ($user1_id == $record['user1_id'] ){

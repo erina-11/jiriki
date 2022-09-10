@@ -88,7 +88,42 @@ if ($status == false) {
     <div>
         <img class="icon" src="" alt="">
     </div>
+    <?php 
+$sql = 'SELECT COUNT(*) FROM follow_table WHERE follow_user_id=:follow_user_id AND follower_user_id = :follower_user_id';
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':follow_user_id', $user_id, PDO::PARAM_STR);
+$stmt->bindValue(':follower_user_id', $user2_id, PDO::PARAM_STR);
+$status = $stmt->execute(); 
+$count = $stmt->fetchColumn();
+$follow = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$output = "";
 
+$sql = 'SELECT * FROM follow_table WHERE follow_user_id=:follow_user_id AND follower_user_id = :follower_user_id';
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':follow_user_id', $user_id, PDO::PARAM_STR);
+$stmt->bindValue(':follower_user_id', $user2_id, PDO::PARAM_STR);
+$status = $stmt->execute(); 
+$followinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if($count == 0) {
+    //var_dump($count);
+    //exit();
+    $output .=     "<form action=follow_user.php method=post>";
+    $output .=     "<input type=hidden name=user2_id value=$user2_id>";
+    $output .=     "<div>";
+    $output .=     "<button>フォローする</button>";
+    $output .=     "</div>";
+    $output .=     "</form>";
+} else{
+echo('フォロー中');
+}
+?>
+   <!-- 
+    <form action="follow_user.php" method="post">
+    <input type="hidden" name="user2_id" value="<?= $user2_id?>">
+    <div><button>フォローする</button></div></form>
+    -->
     <div>
         <a href="profile_edit.php">プロフィール編集</a>
     </div>

@@ -27,8 +27,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //echo "</pre>";
 //exit();
 foreach ($result as $count) {
-    $output .= $result;
-    $output .= "<br>";
+    print $result;
+    print "<br>";
 }
 ?>
 <title>一般ユーザー一覧</title>
