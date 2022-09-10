@@ -57,8 +57,8 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Hi****</h5>
-              <p class="card-text">いま、HTML、CSSの勉強をしています。<br>いつか、自分でアプリを作ってみたいです。</p>
+              <h5 class="card-title">Hisaki</h5>
+              <p class="card-text">いま、HTML,CSS,PHPの勉強をしています。<br>いつか、自分でアプリを作ってみたいです。<br>パソコンが爆発寸前。<br>買い替えを検討中。</p>
             </div>
           </div>
         </div>
