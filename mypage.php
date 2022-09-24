@@ -49,9 +49,8 @@ if ($status == false) {
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <img width="250" height="100" src="img/staff/テストくん.jpg" alt="テストくんが出るはずです">
+                    <img width="250" height="100" src="Ueno_icon.png" alt="変更しました">
                 </div>
-
                 <div class="col-2">
                     <p>開催したイベント数　5</p>
                 </div>
@@ -64,10 +63,28 @@ if ($status == false) {
                 </div>
             </div>
         </div>
-
+        <br>
         <p>吾輩はSAKANAである。ちゃんとした名前はまだ無い。どこで生れたかとんと見当がつかぬ。
             何でも薄暗い漁船の上でピチピチ跳ねていた事だけは記憶している。
             吾輩はここで始めて人間というものを見た...</p>
+
+        <!-- ここから変更しました -->
+
+        <br>
+
+        <img width="250" height="100" src="Ueno_icon.png" alt="変更しました">
+        <label for="date">誕生日:</label>
+        <input type="date" id="date" name="誕生日" value="" />
+
+        <br>
+
+        <br>
+
+        <img width="250" height="100" src="Ueno_icon.png" alt="変更しました">
+        <label for="date">編集日:</label>
+        <input type="date" id="date" name="編集日" value="" />
+
+        <!-- ここまでです -->
 
     </div>
 
