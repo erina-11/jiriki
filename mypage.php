@@ -29,8 +29,8 @@ if ($status == false) {
     // fetch()関数でSQLで取得したレコードを取得できる
     $record = $stmt->fetch(PDO::FETCH_ASSOC);
 }
-// var_dump($record);
-// exit();
+//var_dump($record);
+//exit();
 
 ?>
 
@@ -57,7 +57,7 @@ if ($status == false) {
                 </div>
 
                 <div class="col-2">
-                    <p>フォロワー100</p>
+                    <p>フォロワー数:<!--<?php echo '$record';  ?>--></p>
                 </div>
                 <div class="col-2">
                     <p>フォロー中80</p>

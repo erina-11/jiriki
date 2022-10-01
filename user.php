@@ -115,13 +115,14 @@ if($count == 0) {
     $output .=     "<button>フォローする</button>";
     $output .=     "</div>";
     $output .=     "</form>";
-} else{
-echo('フォロー中');
+} else if($count == 1) {
+echo('フォロー済み');
 }
 ?>
+ <?= $output ?>
    <!-- 
     <form action="follow_user.php" method="post">
-    <input type="hidden" name="user2_id" value="<?= $user2_id?>">
+    <input type="hidden" name="user2_id" value="">
     <div><button>フォローする</button></div></form>
     -->
     <div>
@@ -189,6 +190,7 @@ $sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id AND user2_id = :user2
     exit();
     }
     ?>
+
     <?= $output ?>
     <br>
     
