@@ -43,10 +43,11 @@ foreach ($result as $record) {
       <a href='plan_details.php?plan_id={$record["id"]}'>
         <div class='ueno'> 
             <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
-            <h5 class='card-title'>{$record["name"]}</h5>
+            <h5 class='addition2'>{$record["name"]}</h5>
             <p class='card-text'>{$record["organizer_message"]}'</p>
             <p>
-              主催者からのひとこと
+            
+            <a class='addition1'> 主催者からのひとこと 
             </p>
         </div>
      </a>
