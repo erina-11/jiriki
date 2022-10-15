@@ -56,8 +56,17 @@ if ($status == false) {
                 </div>
 
                 <div class="col-2">
-                    <p>フォロワー数:
-                        <!--<?php echo '$record';  ?>-->
+                <p>フォロワー数:
+<?php
+$sql = 'SELECT COUNT(*) FROM follow_table WHERE follower_user_id=:follower_user_id';
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':follower_user_id', $id, PDO::PARAM_STR);
+$status = $stmt->execute(); 
+$count = $stmt->fetchColumn();
+$followinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo $count;
+?>
                     </p>
                 </div>
                 <div class="col-2">

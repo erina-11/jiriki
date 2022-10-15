@@ -117,6 +117,14 @@ if($count == 0) {
     $output .=     "</form>";
 } else if($count == 1) {
 echo('フォロー済み');
+$output .=     "<form action=follow_del_user.php method=post>";
+$output .=     "<input type=hidden name=user2_id value=$user2_id>";
+$output .=     "<input type=hidden name=0 value=0>";
+$output .=     "<input type=hidden name=1 value=0>";
+$output .=     "<div>";
+$output .=     "<button>フォローを解除する</button>";
+$output .=     "</div>";
+$output .=     "</form>";
 }
 ?>
  <?= $output ?>
