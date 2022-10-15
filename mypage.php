@@ -56,7 +56,9 @@ if ($status == false) {
                 </div>
 
                 <div class="col-2">
-                    <p>フォロワー数:<!--<?php echo '$record';  ?>--></p>
+                    <p>フォロワー数:
+                        <!--<?php echo '$record';  ?>-->
+                    </p>
                 </div>
                 <div class="col-2">
                     <p>フォロー中80</p>
@@ -89,23 +91,29 @@ if ($status == false) {
     </div>
 
 
+
     <div>
+        <i class="bi bi-heart-fill heart1"></i>
         <img class="icon" src="" alt="">
     </div>
 
     <div>
+        <i class="bi bi-chat-quote-fill"></i>
         <a href="profile_edit.php">プロフィール編集</a>
     </div>
 
     <div>
+        <i class="bi bi-chat-square-heart-fill"></i>
         <a href="follow_list.php">フォロー中の主催者一覧</a>
     </div>
 
     <div>
+        <i class="bi bi-caret-right-square-fill"></i>
         <a href="plan_list.php">あなたが主催しているイベント一覧</a>
     </div>
 
     <div>
+        <i class="bi bi-check2-circle"></i>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
     <?php
@@ -121,16 +129,20 @@ if ($status == false) {
         "</div>";
     }
     ?>
+
     <div>
+        <i class="bi bi-emoji-heart-eyes-fill"></i>
         <a href=staff_login.php>スタッフページへ</a>
     </div>
     <br>
 
     <div>
+        <i class="bi bi-house-door-fill"></i>
         <a href="index.php">ホーム画面へ</a>
     </div>
 
     <div>
+        <i class="bi bi-journal-arrow-up"></i>
         <a href="logout.php">ログアウト</a>
     </div>
 

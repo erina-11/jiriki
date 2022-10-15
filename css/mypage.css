@@ -12,3 +12,35 @@
 .col-6 {
     border-radius: 180px;
 }
+
+.bi-heart-fill {
+    color: pink;
+}
+
+.bi-chat-quote-fill {
+    color: grey;
+}
+
+.bi-chat-square-heart-fill {
+    color: skyblue;
+}
+
+.bi-caret-right-square-fill {
+    color: greenyellow;
+}
+
+.bi-check2-circle {
+    color: rgb(164, 127, 199);
+}
+
+.bi-emoji-heart-eyes-fill {
+    color: rgb(128, 126, 197);
+}
+
+.bi-house-door-fill {
+    color: rgb(218, 151, 107);
+}
+
+.bi-journal-arrow-up {
+    color: black;
+}
