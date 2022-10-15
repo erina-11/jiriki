@@ -70,14 +70,16 @@ foreach ($result as $record) {
   // 今回は以降foreachしないので影響なし
   unset($value);
 }
+
+
 $output .= "</div>";
 
 ?>
 
-
 <?php include('head_top.php'); ?>
 
 <body>
+
   <?php include('header_common.php'); ?>
 
   <fieldset>
