@@ -70,7 +70,18 @@ echo $count;
                     </p>
                 </div>
                 <div class="col-2">
-                    <p>フォロー中80</p>
+                    <p>フォロー中:
+                        <?php 
+                        $sql = 'SELECT COUNT(*) FROM follow_table WHERE follow_user_id=:follow_user_id';
+                        // SQL準備&実行
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->bindValue(':follow_user_id', $id, PDO::PARAM_STR);
+                        $status = $stmt->execute(); 
+                        $count2 = $stmt->fetchColumn();
+                        $followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        echo $count2;
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
