@@ -31,7 +31,23 @@ if ($status == false) {
 }
 //var_dump($record);
 //exit();
+//フォロー
+$sql = 'SELECT COUNT(*) FROM follow_table WHERE follower_user_id=:follower_user_id';
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':follower_user_id', $id, PDO::PARAM_STR);
+$status = $stmt->execute(); 
+$count = $stmt->fetchColumn();
+$followinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+//フォロー中
+$sql = 'SELECT COUNT(*) FROM follow_table WHERE follow_user_id=:follow_user_id';
+// SQL準備&実行
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':follow_user_id', $id, PDO::PARAM_STR);
+$status = $stmt->execute(); 
+$count2 = $stmt->fetchColumn();
+$followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -57,30 +73,12 @@ if ($status == false) {
 
                 <div class="col-2">
                 <p>フォロワー数:
-<?php
-$sql = 'SELECT COUNT(*) FROM follow_table WHERE follower_user_id=:follower_user_id';
-// SQL準備&実行
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':follower_user_id', $id, PDO::PARAM_STR);
-$status = $stmt->execute(); 
-$count = $stmt->fetchColumn();
-$followinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $count;
-?>
+                <?php echo $count; ?>
                     </p>
                 </div>
                 <div class="col-2">
                     <p>フォロー中:
-                        <?php 
-                        $sql = 'SELECT COUNT(*) FROM follow_table WHERE follow_user_id=:follow_user_id';
-                        // SQL準備&実行
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->bindValue(':follow_user_id', $id, PDO::PARAM_STR);
-                        $status = $stmt->execute(); 
-                        $count2 = $stmt->fetchColumn();
-                        $followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        echo $count2;
-                        ?>
+                        <?php echo $count2; ?>
                     </p>
                 </div>
             </div>
