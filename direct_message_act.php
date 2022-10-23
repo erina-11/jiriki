@@ -31,11 +31,11 @@ $example = $_POST['example'];
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = "INSERT INTO `direct_messege`(`talk_id`, `user_id`, `chat`) VALUES (:talk_id,:user_id,:chat)";
+$sql = "INSERT INTO `direct_messege`(`talk_id`, `user1_id`, `chat`) VALUES (:talk_id,:user1_id,:chat)";
  
 // SQL準備&実行 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':user_id', $_SESSION['id'], PDO::PARAM_INT);
+$stmt->bindValue(':user1_id', $_SESSION['id'], PDO::PARAM_INT);
 $stmt->bindValue(':talk_id', $_POST['talk_id'], PDO::PARAM_INT);
 $stmt->bindValue(':chat', $example, PDO::PARAM_STR);
  //var_dump($stmt);

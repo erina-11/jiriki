@@ -43,10 +43,10 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 //echo "<pre>";
-//var_dump($result);
+//ar_dump($result);
 //exit();
 //echo "</pre>";
-if ($result['0']['user_id'] == $_SESSION['id'] ) {
+if ($result['0']['user1_id'] == $_SESSION['id'] ) {
 
  // データ登録SQL作成
  // `created_at`と`updated_at`には実行時の`sysdate()`関数を用いて実行時の日時を入力する
