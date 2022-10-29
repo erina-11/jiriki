@@ -11,7 +11,7 @@ check_session_id(); // idチェック関数の実行
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-   !isset($_POST['talk_id']) || $_POST['talk_id'] == ''  ||
+   !isset($_POST['room_id']) || $_POST['room_id'] == ''  ||
    !isset($_POST['user1_id']) || $_POST['user1_id'] == ''  ||
    !isset($_POST['example']) || $_POST['example'] == '' 
 ) {
@@ -31,12 +31,12 @@ $example = $_POST['example'];
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = "INSERT INTO `direct_messege`(`talk_id`, `user1_id`, `chat`) VALUES (:talk_id,:user1_id,:chat)";
+$sql = "INSERT INTO `direct_messege`(`room_id`, `user1_id`, `chat`) VALUES (:room_id,:user1_id,:chat)";
  
 // SQL準備&実行 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':user1_id', $_SESSION['id'], PDO::PARAM_INT);
-$stmt->bindValue(':talk_id', $_POST['talk_id'], PDO::PARAM_INT);
+$stmt->bindValue(':room_id', $_POST['room_id'], PDO::PARAM_INT);
 $stmt->bindValue(':chat', $example, PDO::PARAM_STR);
  //var_dump($stmt);
  //exit();
@@ -56,7 +56,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']."&user_id=".$_POST['user_id']);
+    header("Location:direct_messege.php?room_id=".$_POST['room_id']."&user_id=".$_POST['user_id']);
     exit();
 }
 

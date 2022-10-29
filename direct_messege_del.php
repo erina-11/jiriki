@@ -15,7 +15,7 @@ if (!empty($_SESSION['id'])) {
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
-    !isset($_GET['talk_id']) || $_GET['talk_id'] == '' ||
+    !isset($_GET['room_id']) || $_GET['room_id'] == '' ||
     !isset($_GET['user_id']) || $_GET['user_id'] == ''  ||
     !isset($_GET['id']) || $_GET['id'] == ''  
   
@@ -31,7 +31,7 @@ if (
 // 受け取ったデータを変数に入れる
 $user_id = $_GET["user_id"];
 $id = $_GET['id'];
-$talk_id = $_GET['talk_id'];
+$room_id = $_GET['room_id'];
 // var_dump($plan_message);
 // exit();
 // DB接続
@@ -74,11 +74,11 @@ if ($status == false) {
         $user_id = $record['user_id'];
     }   
     
-    header("Location:direct_messege.php?talk_id=".$_GET['talk_id']."&user_id=".$_GET['user_id']);
+    header("Location:direct_messege.php?room_id=".$_GET['room_id']."&user_id=".$_GET['user_id']);
     exit();
 }
 } else {
-    header("Location:direct_messege_error.php?talk_id=".$_GET['talk_id']."&user_id=".$_GET['user_id']);
+    header("Location:direct_messege_error.php?room_id=".$_GET['room_id']."&user_id=".$_GET['user_id']);
     exit();
 }
 ?>

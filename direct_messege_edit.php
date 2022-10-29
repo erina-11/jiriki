@@ -13,7 +13,7 @@ check_session_id(); // idチェック関数の実行
 // 値が存在しないor空で送信されてきた場合はNGにする
 if (
     !isset($_GET['user_id']) || $_GET['user_id'] == ''  ||
-    !isset($_GET['talk_id']) || $_GET['talk_id'] == '' 
+    !isset($_GET['room_id']) || $_GET['room_id'] == '' 
     ) 
 { 
     // 項目が入力されていない場合はここでエラーを出力し，以降の処理を中止する
@@ -26,7 +26,7 @@ if (
 // 受け取ったデータを変数に入れる
 $user_id = $_GET['user_id'];
 $id = $_GET['id'];
-$talk_id = $_GET['talk_id'];
+$room_id = $_GET['room_id'];
 // var_dump($plan_message);
 // exit();
 // DB接続
@@ -74,7 +74,7 @@ foreach ($result as $record){
             <input type="text" value="<?= $chat ?>" name="chat" class="form-control">
             <input type="hidden" value="<?= $user_id ?>" name="user_id" class="form-control">
             <input type="hidden" value="<?= $id ?>" name="id" class="form-control">
-            <input type="hidden" value="<?= $talk_id ?>" name="talk_id" class="form-control">
+            <input type="hidden" value="<?= $room_id ?>" name="room_id" class="form-control">
             <input type="submit">
 
         </div>

@@ -14,7 +14,7 @@ if (
     !isset($_POST['chat']) || $_POST['chat'] == ''  ||
     !isset($_POST['id']) || $_POST['id'] == ''  ||
     !isset($_POST['user_id']) || $_POST['user_id'] == ''  ||
-    !isset($_POST['talk_id']) || $_POST['talk_id'] == ''  
+    !isset($_POST['room_id']) || $_POST['room_id'] == ''  
   
     ) 
 {
@@ -29,7 +29,7 @@ if (
 $user_id = $_POST["user_id"];
 $id = $_POST['id'];
 $chat = $_POST['chat'];
-$talk_id = $_POST['talk_id'];
+$room_id = $_POST['room_id'];
 // var_dump($chat);
 // exit();
 // DB接続
@@ -58,7 +58,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:direct_messege.php?talk_id=".$_POST['talk_id']."&user_id=".$_POST['talk_id']);
+    header("Location:direct_messege.php?room_id=".$_POST['room_id']."&user_id=".$_POST['room_id']);
     exit();
 }
 ?>
