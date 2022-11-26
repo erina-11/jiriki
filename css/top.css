@@ -29,6 +29,10 @@
   display: inline;
 }
 
+.ueno:nth-child(even) {
+  background-color: rgba(247, 226, 220, 0.945);
+}
+
 /*
 .card-text {
   display: inline;

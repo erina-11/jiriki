@@ -156,3 +156,7 @@
   .action_expansion :hover {
     transform: scale(1.1);
   }
+
+  .ueno {
+    background-color: #fff5f5;
+  }
