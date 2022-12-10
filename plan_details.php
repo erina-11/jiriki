@@ -90,16 +90,7 @@ if ($pu_status == false) {
 //var_dump($pu_record);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベント企画詳細</title>
-</head>
+<?php include('head_common.php'); ?>
 
 <body>
     <header>
@@ -109,65 +100,85 @@ if ($pu_status == false) {
     </header>
 
     <table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td><p class="plan_starttime">開始日時:<td><?= date("Y/M/D", strtotime($p_record["date_start"])); ?></td></p>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <p class="plan_starttime">開始日時:
+                <td><?= date("Y/M/D", strtotime($p_record["date_start"])); ?></td>
+                </p>
                 </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td><p class="plan_endtime">終了日時:<?= date('Y年m月d日', strtotime($p_record["date_end"])); ?></p></td>
-      <td></td>
-    </tr>
-    <tr>
-  <th scope="row"></th>
-  <td> <p class="plan_range">範囲:<?= $p_record["range"] ?></p></td>
-  <td></td>
-  </tr>
-  <tr>
-  <th scope="row"></th>
-  <td><p>参加人数制限:<?= $p_record["upper_limit"] ?></p></td>
-  <td></td>
-  </tr>
-  <th scope="row"></th>
- <td><p class="plan_number_of_people">参加人数:<?= $p_record["upper_limit"] ?></p></td>
- <td></td>
- </tr>
- <th scope="row"></th>
- <td><p>主催者:<a href="user.php?id=<?= $p_record['user_id'] ?>"><?= $p_record["name"] ?></a></p></td>
- <td></td>
- </tr>
- <th scope="row"></th>
- <td><p name="" id="" cols="30" rows="10">主催者から一言</p><p><?= $p_record["organizer_message"] ?></p></td>
- <td></td>
- </tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <p class="plan_endtime">終了日時:<?= date('Y年m月d日', strtotime($p_record["date_end"])); ?></p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <p class="plan_range">範囲:<?= $p_record["range"] ?></p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>
+                    <p>参加人数制限:<?= $p_record["upper_limit"] ?></p>
+                </td>
+                <td></td>
+            </tr>
+            <th scope="row"></th>
+            <td>
+                <p class="plan_number_of_people">参加人数:<?= $p_record["upper_limit"] ?></p>
+            </td>
+            <td></td>
+            </tr>
+            <th scope="row"></th>
+            <td>
+                <p>主催者:<a href="user.php?id=<?= $p_record['user_id'] ?>"><?= $p_record["name"] ?></a></p>
+            </td>
+            <td></td>
+            </tr>
+            <th scope="row"></th>
+            <td>
+                <p name="" id="" cols="30" rows="10">主催者から一言</p>
+                <p><?= $p_record["organizer_message"] ?></p>
+            </td>
+            <td></td>
+            </tr>
 
- <td></td>
- </tr>
- < 
- <td><p>参加メンバー</p>
-<!-- <?= $plan_p_record["plan_id"] ?> --></td>
- <td> <button><a href="plan_talk.php?plan_id=<?= $p_id ?>">参加する</a></button>
-<form method="post" action="participate_act.php"></td>
- </tr>
+            <td></td>
+            </tr>
+            < <td>
+                <p>参加メンバー</p>
+                <!-- <?= $plan_p_record["plan_id"] ?> -->
+                </td>
+                <td> <button><a href="plan_talk.php?plan_id=<?= $p_id ?>">参加する</a></button>
+                    <form method="post" action="participate_act.php">
+                </td>
+                </tr>
 
 
 
- <th scope="row"></th>
- <td> <div>学習メモ<textarea name="memo" cols="30" rows="10"><?= $ppp ?></textarea></div>
-<div><input type="submit" name="submit" value="保存" class="button"></div>
-<input type="hidden" name="plan_id" value="<?= $p_record["id"] ?>"></td>
- <td></td>
- </tr>
+                <th scope="row"></th>
+                <td>
+                    <div>学習メモ<textarea name="memo" cols="30" rows="10"><?= $ppp ?></textarea></div>
+                    <div><input type="submit" name="submit" value="保存" class="button"></div>
+                    <input type="hidden" name="plan_id" value="<?= $p_record["id"] ?>">
+                </td>
+                <td></td>
+                </tr>
 
 
 
@@ -175,7 +186,7 @@ if ($pu_status == false) {
 
 
         </tbody>
-</table>
+    </table>
     </form>
 
     <!-- <form method="post" action="plan_details_act.php">

@@ -1,14 +1,19 @@
 .ueno {
-  border-top: 50px solid #A8DBA8;
+  border-top: 50px solid #79BD9A;
   color: rgb(252, 29, 29);
   text-decoration: none;
   border: 2px solid black;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .addition1 {
-  border: 1px solid #A8DBA8;
+  border: 1px solid #79BD9A;
   border-radius: 5px;
-  background-color: #A8DBA8;
+  background-color: #79BD9A;
   padding: 10px;
   text-align: center;
   color: white;
@@ -18,9 +23,9 @@
 }
 
 .addition2 {
-  border: 1px solid #A8DBA8;
+  border: 1px solid #79BD9A;
   border-radius: 5px;
-  background-color: #A8DBA8;
+  background-color: #79BD9A;
   padding: 10px;
   text-align: center;
   color: white;
