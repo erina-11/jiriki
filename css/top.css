@@ -1,14 +1,14 @@
 .ueno {
-  border-top: 50px solid brown;
+  border-top: 50px solid #A8DBA8;
   color: rgb(252, 29, 29);
   text-decoration: none;
   border: 2px solid black;
 }
 
 .addition1 {
-  border: 1px solid brown;
+  border: 1px solid #A8DBA8;
   border-radius: 5px;
-  background-color: brown;
+  background-color: #A8DBA8;
   padding: 10px;
   text-align: center;
   color: white;
@@ -18,9 +18,9 @@
 }
 
 .addition2 {
-  border: 1px solid brown;
+  border: 1px solid #A8DBA8;
   border-radius: 5px;
-  background-color: brown;
+  background-color: #A8DBA8;
   padding: 10px;
   text-align: center;
   color: white;
@@ -30,7 +30,7 @@
 }
 
 .ueno:nth-child(even) {
-  background-color: rgba(247, 226, 220, 0.945);
+  background-color: #A8DBA8;
 }
 
 /*
