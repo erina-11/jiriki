@@ -38,21 +38,20 @@ if ($status == false) {
 $output .= "<div class='d-flex flex-wrap'>";
 
 foreach ($result as $record) {
-
-  $output .= "
+  if (isset($record)) {
+    $output .= "
       <a href='plan_details.php?plan_id={$record["id"]}'>
         <div class='ueno'> 
             <img src='img/{$record["img"]}' alt='ここには写真が出ます' width='150' height='100'>
             <h5 class='addition2'>{$record["name"]}</h5>
             <p class='card-text'>{$record["organizer_message"]}'</p>
-            <p>
-            
-            <a class='addition1'> 主催者からのひとこと 
+            <p>            
+              <a class='addition1'> 主催者からのひとこと </a>
             </p>
         </div>
      </a>
     ";
-
+  }
   /*
         $output .= "<tr>";
         $output .= "<td><a href=''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''plan_details.php?id={$record["id"]}''>{$record["name"]}</a></td>";
