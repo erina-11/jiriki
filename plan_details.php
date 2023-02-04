@@ -93,11 +93,7 @@ if ($pu_status == false) {
 <?php include('head_common.php'); ?>
 
 <body>
-    <header>
-        <!-- <?php include('header.html'); ?> -->
-        <script src="header.js"></script>
-        <h1>イベント企画詳細</h1>
-    </header>
+    <?php include('header_common.php'); ?>
 
     <table class="table">
         <thead>
