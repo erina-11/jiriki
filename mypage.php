@@ -134,6 +134,10 @@ $followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <i class="bi bi-check2-circle"></i>
         <a href="">あなたが参加予定のイベント一覧</a>
     </div>
+
+    <div>
+        <a href="serch_massage.php">あなたが連絡した人のあるリスト</a>
+    </div>
     <?php
     //バグ発生
     if ($record == 1) {

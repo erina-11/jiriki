@@ -103,7 +103,7 @@ if ($status == false) {
         </div>
     </div>
 
-    <h2><?= $record['profile'] ?></h2>
+ 
 
     <div>
         <img class="icon" src="" alt="">
@@ -200,10 +200,10 @@ $sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id AND user2_id = :user2
 //var_dump($roominfo);
 //exit();
     if($count == 1) {
-        //var_dump($roominfo);
+        //var_dump($record);
         //exit();
         $output .=     "<div>";
-        $output .=     "<a href=direct_messege.php?room_id=".$roominfo['0']['room_id']."&user_id=".$record['id'].">ダイレクトメッセージを開始する</a>";
+        $output .=     "<a href=direct_messege.php?room_id=".$roominfo['0']['talk_id']."&user_id=".$record['id'].">ダイレクトメッセージを開始する</a>";
         $output .=     "</div>";
     } else{
     $sql = 'INSERT INTO `room`(`user1_id`, `user2_id`) VALUES (:user1_id,:user2_id)';
