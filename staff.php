@@ -24,7 +24,7 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 </style>
 </form>
-<form action="staff_del.php">
+<form action="ban.php">
 <div align="center" class="center">
     <button><h4>Ban User</h4></button>
 </div>
@@ -44,3 +44,5 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
 #require("footer.php");
 ?>
 </footer>
+<a href="index.php">ログアウト</a>
+<br>
