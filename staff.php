@@ -23,19 +23,13 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
     margin-top:10px;
 }
 </style>
-<form action="staff_userlist.php" method="POST">
+</form>
+<form action="staff_del.php">
 <div align="center" class="center">
-    <button><h4>User一覧</h4></button>
-    <input type="hidden" name="0" value="0">
+    <button><h4>Ban User</h4></button>
 </div>
 </form>
-<form action="staff_stafflist.php" method="POST">
-<div align="center" class="center">
-    <button><h4>Staff一覧</h4></button>
-    <input type="hidden" name="1" value="1">
-</div>
-</form>
-<form action="staff_regist.php">
+<form action="ban.php">
 <div align="center" class="center">
     <button><h4>スタッフの登録</h4></button>
 </div>
