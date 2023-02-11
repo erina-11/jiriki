@@ -40,6 +40,11 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC);
     <button><h4>スタッフの登録</h4></button>
 </div>
 </form>
+<form action="staff_del.php">
+<div align="center" class="center">
+    <button><h4>スタッフの登録解除</h4></button>
+</div>
+</form>
 <footer>
 <?php #include('footer.php'); 
 #require("footer.php");
