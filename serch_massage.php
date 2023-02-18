@@ -35,9 +35,17 @@ $sql = 'SELECT COUNT(*) FROM room WHERE user1_id=:user1_id OR user2_id=:user2_id
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':user1_id', $id, PDO::PARAM_STR);
+$stmt->bindValue(':user2_id', $id, PDO::PARAM_STR);
 $status = $stmt->execute(); 
 $count = $stmt->fetchColumn();
-$followinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
+$output = "";
+
+echo "<pre>";
+var_dump($result);
+echo "</pre>";
+exit();
 ?>
 <?php include('head_mypage.php'); ?>
 

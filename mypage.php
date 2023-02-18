@@ -18,6 +18,7 @@ $stmt = $pdo->prepare($sql);
 // exit();
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
+$info = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($status == false) {
     // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
@@ -60,7 +61,7 @@ $followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <div class="mypage-card">
-        <h2><?= $record['nickname'] ?></h2>
+        <h2><?= $info['nickname'] ?></h2>
 
         <div class="container">
             <div class="row">
@@ -84,9 +85,7 @@ $followinfo2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
         <br>
-        <p>吾輩はSAKANAである。ちゃんとした名前はまだ無い。どこで生れたかとんと見当がつかぬ。
-            何でも薄暗い漁船の上でピチピチ跳ねていた事だけは記憶している。
-            吾輩はここで始めて人間というものを見た...</p>
+        <p>プロフィール：<?php echo $info['profile'];?></p>
 
         <!-- ここから変更しました -->
 
