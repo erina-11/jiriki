@@ -25,7 +25,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $status = $stmt->execute();
-// var_dump($status);
+// var_dump($_SESSION);
 // exit();
 
 if ($status == false) {
@@ -46,8 +46,14 @@ if ($status == false) {
         $_SESSION["session_id"] = session_id();
         $_SESSION["nickname"] = $val["nickname"];
         $_SESSION['id'] = $val['id'];
+        $_SESSION['ban'] = $val['ban'];
         // var_dump($_SESSION);
         // exit();
+        if ($_SESSION['ban'] = 0){
+            echo "このユーザーはBANされています。";
+            echo '<a href="login.php">ログイン</a>';
+            exit();
+        };
         header("Location: mypage.php"); // 一覧ページへ移動
     }
 }
